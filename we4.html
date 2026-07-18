@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>T.A.T.V. — Mariana Hoyos</title>
+<title>WE.4 — Berlin Fashion Week — Mariana Hoyos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -81,31 +81,25 @@
     margin-bottom: 1.6rem; color: var(--ink);
   }
 
-  /* editions: poster + text */
-  .edition {
-    display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: clamp(1.2rem, 4vw, 2.6rem);
-    margin-bottom: clamp(2.4rem, 5vw, 3.6rem); align-items: start;
-  }
-  @media (max-width: 680px) { .edition { grid-template-columns: 1fr; } }
-  .edition .poster {
-    border: 1px solid var(--line); border-radius: 2px; overflow: hidden; background: var(--bg-deep);
-  }
-  .edition .poster img { width: 100%; display: block; }
+  /* editions */
+  .edition { margin-bottom: clamp(2.6rem, 6vw, 4rem); }
   .edition .info h3 {
-    font-family: var(--display); font-weight: 500; font-size: 1.15rem; letter-spacing: 0.02em; margin-bottom: 0.3rem;
+    font-family: var(--display); font-weight: 500; font-size: 1.3rem; letter-spacing: 0.02em; margin-bottom: 0.3rem;
   }
   .edition .info .when {
     font-family: var(--display); font-size: 0.8rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--lime-dim); margin-bottom: 1rem;
   }
-  .edition .info p { font-weight: 300; color: var(--ink-soft); margin-bottom: 1rem; max-width: 58ch; }
-  .edition .info .lineup {
-    font-size: 0.9rem; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 0.9rem;
-  }
-  .edition .info .lineup b { color: var(--ink-soft); font-weight: 500; font-family: var(--display); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.35rem; }
+  .edition .info p { font-weight: 300; color: var(--ink-soft); margin-bottom: 1.2rem; max-width: 62ch; }
 
-  /* stills gallery */
-  .stills { margin-top: clamp(2.6rem, 6vw, 4rem); border-top: 1px solid var(--line); padding-top: clamp(2rem, 5vw, 3rem); }
+  .runways {
+    font-family: var(--display); font-size: 0.78rem; letter-spacing: 0.06em;
+    color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin-bottom: 1.6rem;
+  }
+  .runways a { color: var(--lime-dim); text-decoration: none; }
+  .runways a:hover { color: var(--lime); }
+  .runways .tbd { color: var(--ink-faint); font-style: italic; }
+
   .grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
   }
@@ -114,6 +108,13 @@
     border: 1px solid var(--line); border-radius: 2px; overflow: hidden; background: var(--bg-deep); aspect-ratio: 16/10;
   }
   .grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .stills { margin-top: clamp(2.6rem, 6vw, 4rem); border-top: 1px solid var(--line); padding-top: clamp(2rem, 5vw, 3rem); }
+
+  .note {
+    font-family: var(--display); font-size: 0.78rem; letter-spacing: 0.04em;
+    color: var(--ink-faint); font-style: italic; margin-top: 0.6rem;
+  }
 
   footer {
     border-top: 1px solid var(--line); text-align: center;
@@ -136,66 +137,54 @@
 <main>
   <div class="head">
     <p class="eyebrow">Streaming &amp; Live Editing</p>
-    <h1>T.A.T.V.</h1>
-    <p class="lede">Temporary Autonomous Tele Vision — a micro-republic transmitting live concerts, performances and talks. Everything filmed live and programmed in real time, where the "behind the scenes" melts into the staged. Five editions, publicly funded three times.</p>
+    <h1>WE.4 — Berlin Fashion Week</h1>
+    <p class="lede">AV documentation and livestream of Berlin Fashion Week, produced across two full editions — four designers, four runway shows, each time — in collaboration with Reframe Videos.</p>
     <div class="meta">
-      <span>Berlin · 2020–ongoing</span>
-      <span>Producer &amp; live editor · poster design</span>
-      <a href="https://www.youtube.com/@temporaryautonomoustelevision" target="_blank" rel="noopener">YouTube ↗</a>
-      <a href="https://www.twitch.tv/ttaattvv" target="_blank" rel="noopener">Twitch ↗</a>
+      <span>Berlin · 2022–2023</span>
+      <span>Live editor &amp; streaming</span>
     </div>
+  </div>
+
+  <p class="section-label">Editions</p>
+
+  <div class="edition">
+    <div class="info">
+      <h3>Autumn/Winter — BOLLE Festsäle, Moabit</h3>
+      <p class="when">2022 · BOLLE Festsäle, Moabit, Berlin</p>
+      <p>The inaugural edition — four designers presented back to back, all four runways filmed live and streamed.</p>
+    </div>
+    <div class="runways">
+      <a href="https://www.youtube.com/watch?v=iqxwrtHG94E" target="_blank" rel="noopener">Runway 01 ↗</a>
+      <a href="https://www.youtube.com/watch?v=jQV8DY7WP_A" target="_blank" rel="noopener">Runway 02 ↗</a>
+      <a href="https://www.youtube.com/watch?v=YrWBfe5WkJE" target="_blank" rel="noopener">Runway 03 ↗</a>
+      <a href="https://www.youtube.com/watch?v=uNEWtMwUjsc" target="_blank" rel="noopener">Runway 04 ↗</a>
+    </div>
+  </div>
+
+  <div class="edition">
+    <div class="info">
+      <h3>Spring/Summer — second edition</h3>
+      <p class="when">2023 · Berlin</p>
+      <p>The second full edition, once again four designers and four runway shows, filmed live and streamed.</p>
+    </div>
+    <div class="runways">
+      <span class="tbd">Runway 01 — link coming soon</span>
+      <span class="tbd">Runway 02 — link coming soon</span>
+      <span class="tbd">Runway 03 — link coming soon</span>
+      <span class="tbd">Runway 04 — link coming soon</span>
+    </div>
+    <p class="note">Venue to confirm — Uber Eats Music Hall or Verti Music Hall.</p>
   </div>
 
   <div class="stills">
-    <p class="section-label">From the stream</p>
+    <p class="section-label">From the runways</p>
     <div class="grid">
-      <figure><img src="img/tatv-04.jpg" alt="T.A.T.V. live switcher multiview, ON AIR"></figure>
-      <figure><img src="img/tatv-02.jpg" alt="Concert during the T.A.T.V. stream"></figure>
-      <figure><img src="img/tatv-03.jpg" alt="Performance reading streamed on T.A.T.V."></figure>
-      <figure><img src="img/tatv-01.jpg" alt="T.A.T.V. — detail"></figure>
+      <figure><img src="img/we4-01.jpg" alt="WE.4 runway — Berlin Fashion Week"></figure>
+      <figure><img src="img/we4-02.jpg" alt="WE.4 runway — Berlin Fashion Week"></figure>
+      <figure><img src="img/we4-03.jpg" alt="WE.4 show at the venue — Berlin Fashion Week"></figure>
+      <figure><img src="img/we4-04.jpg" alt="WE.4 runway — Berlin Fashion Week"></figure>
     </div>
-  </div>
-
-  <p class="section-label" style="margin-top:clamp(2.6rem, 6vw, 4rem);">Editions</p>
-  <p style="font-weight:300;color:var(--ink-soft);margin:-0.8rem 0 2.2rem;max-width:58ch;">Posters designed by Mariana Hoyos. More editions and posters coming soon.</p>
-
-  <div class="edition">
-    <div class="poster"><img src="img/tatv-poster-mar.jpg" alt="T.A.T.V. poster — February edition at ausland"></div>
-    <div class="info">
-      <h3>T.A.T.V. at ausland</h3>
-      <p class="when">26–28 February · ausland, Berlin</p>
-      <p>Three nights of live-streamed sound and performance from ausland, transmitted on Twitch.</p>
-      <div class="lineup">
-        <b>Line-up</b>
-        Agente Costura &amp; Ángela Etcetera · Alice Cannavà · Botborg · Baptiste Moulin · Hopek Quirin · Kris Limbach · Lea Walloschke · Lisa Müller-Trede · Lun Ário and Ann Antidote · Radio ON · Rieko Okuda · Seiji Morimoto · Sofía Salvo
-      </div>
-    </div>
-  </div>
-
-  <div class="edition">
-    <div class="poster"><img src="img/tatv-poster-sep.jpg" alt="T.A.T.V. poster — Temporary Autonomous Tele Vision, March 2022"></div>
-    <div class="info">
-      <h3>Temporary Autonomous Tele Vision</h3>
-      <p class="when">11–13 March 2022 · ausland, Berlin</p>
-      <p>A three-day transmission gathering experimental music and radio artists, streamed live on Twitch and ttaattvv.xyz.</p>
-      <div class="lineup">
-        <b>Line-up</b>
-        AL de La Algaida (+ Francesca Carbone) · Cedrik Fermont · Del_F64.0 (Antigenitalistic Rrrriot) · Jealousy Party · Jorge Vicario · Korhan Erel · Phill Niblock · Pia Achternkamp · String Trio (Munsha, Hopek Quirin, Jochen Arbeit) · Udo Noll
-      </div>
-    </div>
-  </div>
-
-  <div class="edition">
-    <div class="poster"><img src="img/tatv-poster-feb.jpg" alt="T.A.T.V. Festival poster — September 2023, Kesselhaus Herzberge"></div>
-    <div class="info">
-      <h3>T.A.T.V. Festival</h3>
-      <p class="when">16 September 2023 · Museum Kesselhaus Herzberge, Berlin</p>
-      <p>A full-day festival edition — nine hours of live transmission from the industrial halls of Kesselhaus Herzberge, part of Zusammenkünste.</p>
-      <div class="lineup">
-        <b>Line-up</b>
-        Mizuki Ishikawa · Frank Bretschneider · Corazón de Robota · Zustand D.
-      </div>
-    </div>
+    <p class="note">More photos from the second edition coming soon.</p>
   </div>
 </main>
 

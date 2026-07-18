@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariana Hoyos — Creative & Media Producer</title>
+<title>Mariana Hoyos — Creative Producer, Film & Media</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -134,25 +134,24 @@
     letter-spacing: 0.32em;
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: var(--ink);
+    color: var(--lime);
     margin-bottom: 1.4rem;
   }
   .hero h1 {
     font-family: var(--display);
     font-weight: 300;
-    font-size: clamp(2.6rem, 8.2vw, 5.8rem);
+    font-size: clamp(2.8rem, 9vw, 6.4rem);
     line-height: 0.98;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: var(--lime);
+    letter-spacing: 0.02em;
+    color: var(--ink);
   }
+  .hero h1 .lime { color: var(--lime); }
   .hero .lede {
     font-family: var(--serif);
     font-weight: 300;
     font-size: clamp(1.05rem, 2.2vw, 1.4rem);
-    line-height: 1.5;
     color: var(--ink-soft);
-    max-width: 46ch;
+    max-width: 42ch;
     margin-top: 1.8rem;
   }
   .hero .meta {
@@ -193,37 +192,32 @@
   }
   .subhead {
     font-family: var(--display);
-    font-weight: 500;
-    letter-spacing: 0.14em;
+    font-weight: 400;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    font-size: clamp(1rem, 1.6vw, 1.2rem);
-    color: var(--lime);
-    margin: 3rem 0 1.4rem;
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-  }
-  .subhead::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--line);
+    font-size: 0.74rem;
+    color: var(--lime-dim);
+    margin: 2.4rem 0 1.2rem;
   }
 
   /* ---- project grid ---- */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2.2rem 1.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.4rem;
   }
   .card {
-    background: transparent;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: border-color 0.25s, transform 0.25s;
   }
+  .card:hover { border-color: var(--lime); transform: translateY(-3px); }
   .card .thumb {
-    position: relative;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 10;
     background:
       repeating-linear-gradient(45deg, #414b56 0 10px, #3c454f 10px 20px);
     display: flex;
@@ -241,9 +235,24 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.4s ease;
   }
-  .card:hover .thumb img { transform: scale(1.05); }
+  .card:hover .thumb img { transform: scale(1.04); }
+
+  /* role revealed on hover, over the thumbnail */
+  .card .thumb { position: relative; }
+  .card .role-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(to top, rgba(43,50,59,0.92) 0%, rgba(43,50,59,0.35) 55%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .card:hover .role-overlay { opacity: 1; }
 
   .thumb.mosaic {
     display: grid;
@@ -254,83 +263,41 @@
   }
   .thumb.mosaic img { width: 100%; height: 100%; object-fit: cover; }
 
-  /* hover-reveal overlay */
-  .card .overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    padding: 1.3rem 1.3rem 1.1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: linear-gradient(to top, rgba(20,23,27,0.95) 0%, rgba(20,23,27,0.78) 42%, rgba(20,23,27,0.15) 78%, transparent 100%);
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-  }
-  .card:hover .overlay,
-  .card:focus-within .overlay {
-    opacity: 1;
-    transform: translateY(0);
+  .card .body { padding: 1.1rem 1.2rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
+  .card h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.22rem;
+    color: var(--lime);
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
   }
   .card .role {
-    display: inline-flex;
-    align-self: flex-start;
     font-family: var(--display);
-    font-size: 0.64rem;
-    letter-spacing: 0.08em;
-    color: var(--bg);
-    background: var(--lime);
-    border-radius: 999px;
-    padding: 0.28rem 0.65rem;
-    margin-bottom: 0.6rem;
-    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--lime);
+    line-height: 1.4;
   }
-  .card .overlay p {
-    font-size: 0.85rem;
+  .card p {
+    font-size: 0.92rem;
     color: var(--ink-soft);
     font-weight: 300;
-    line-height: 1.5;
   }
   .card .foot {
-    margin-top: 0.8rem;
+    margin-top: auto;
+    padding-top: 0.9rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: var(--display);
-    font-size: 0.68rem;
-    letter-spacing: 0.05em;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
     color: var(--ink-faint);
   }
-  .card .foot a { color: var(--lime); text-decoration: none; }
-  .card .foot a:hover { text-decoration: underline; }
-
-  /* caption: always visible, minimal, gallery-style */
-  .card h3.caption {
-    font-family: var(--display);
-    font-weight: 400;
-    font-size: 0.82rem;
-    letter-spacing: 0.02em;
-    color: var(--ink-soft);
-    margin-top: 0.8rem;
-    transition: color 0.2s ease;
-  }
-  .card:hover h3.caption { color: var(--lime); }
-
-  /* touch devices can't hover: keep overlay content visible */
-  @media (hover: none) {
-    .card .overlay {
-      position: static;
-      opacity: 1;
-      transform: none;
-      background: none;
-      padding: 0.7rem 0 0;
-    }
-    .card .role { background: rgba(181,229,80,0.12); color: var(--lime-dim); }
-    .card .foot { border-top: 1px solid var(--line); padding-top: 0.7rem; }
-  }
-
+  .card .foot a { color: var(--lime-dim); text-decoration: none; }
+  .card .foot a:hover { color: var(--lime); }
   .tag-wip {
     color: var(--bg);
     background: var(--lime-dim);
@@ -371,10 +338,13 @@
   footer .contact a:hover { color: var(--lime); border-color: var(--lime); }
 
   .card .foot .links { display: flex; gap: 0.55rem; }
+  .card .foot a { color: var(--lime-dim); text-decoration: none; }
+  .card .foot a:hover { color: var(--lime); }
 
   /* clickable card */
   .card-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
-  .card .view-more { color: var(--lime); font-weight: 500; }
+  .card .view-more { color: var(--lime-dim); font-weight: 500; }
+  .card:hover .view-more { color: var(--lime); }
 
   /* reveal on scroll */
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -400,9 +370,9 @@
   <!-- HERO -->
   <div class="hero-wrap">
   <section class="hero">
-    <p class="eyebrow">Creative &amp; Media Producer · Berlin</p>
-    <h1>Mariana Hoyos</h1>
-    <p class="lede">Colombian-born, Berlin-based creative producer working across filmmaking, set design, live editing and event production — from art direction in Bogotá to streaming T.A.T.V. and producing Dream Baby Dream.</p>
+    <p class="eyebrow">Creative Producer · Film &amp; Media · Berlin</p>
+    <h1>Mariana <span class="lime">Hoyos</span></h1>
+    <p class="lede">Eight years of work across events and film sets — sometimes as a producer, other times as an art director, occasionally as a streaming operator. An integrated approach that runs from the organizational to the aesthetic side of a project.</p>
     <div class="meta">
       <span>Concert &amp; Film Production</span>
       <span>Streaming &amp; Live Editing</span>
@@ -425,62 +395,71 @@
           <img src="img/tatv-02.jpg" alt="Concert during the T.A.T.V. stream">
           <img src="img/tatv-03.jpg" alt="Performance reading streamed on T.A.T.V.">
           <img src="img/tatv-01.jpg" alt="Detail: coming up too soon">
-          <div class="overlay">
-            <span class="role">Producer, live editor &amp; poster design</span>
-            <p>Temporary Autonomous Tele Vision — a micro-republic transmitting live concerts, performances and talks. Everything filmed live and programmed in real time, where the "behind the scenes" melts into the staged. Five editions, publicly funded three times.</p>
-            <div class="foot"><span>Berlin · 2020–ongoing</span><span class="view-more">View editions →</span></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Producer, live editor &amp; poster design</span></div>
         </div>
-        <h3 class="caption">T.A.T.V.</h3>
+        <div class="body">
+          <h3>T.A.T.V.</h3>
+          <p>A micro-republic transmitting live concerts, performances and talks — five editions, three publicly funded.</p>
+          <div class="foot"><span>Berlin · 2020–ongoing</span><span class="view-more">View editions →</span></div>
+        </div>
         </a>
       </article>
+      <article class="card">
+        <div class="thumb"><img src="https://img.youtube.com/vi/IAjejfOVgfI/hqdefault.jpg" alt="A MAZE Festival award show livestream" loading="lazy">
+          <div class="role-overlay"><span class="role">Stage coordination · livestream</span></div>
+        </div>
+        <div class="body">
+          <h3>A MAZE</h3>
+          <p>Coordination of two conference stages and livestream of the festival's award show.</p>
+          <div class="foot"><span>Berlin · 2026</span><a href="https://www.youtube.com/watch?v=IAjejfOVgfI" target="_blank" rel="noopener">watch →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-link" href="we4.html">
+        <div class="thumb mosaic">
+          <img src="img/we4-01.jpg" alt="WE.4 runway — Berlin Fashion Week">
+          <img src="img/we4-02.jpg" alt="WE.4 runway — Berlin Fashion Week">
+          <img src="img/we4-03.jpg" alt="WE.4 show at the venue — Berlin Fashion Week">
+          <img src="img/we4-04.jpg" alt="WE.4 runway — Berlin Fashion Week">
+        
+          <div class="role-overlay"><span class="role">Live editor · streaming</span></div>
+        </div>
+        <div class="body">
+          <h3>WE.4 — Berlin Fashion Week</h3>
+          <p>AV documentation and livestream of Berlin Fashion Week — two full editions, four runways each.</p>
+          <div class="foot"><span>Berlin · 2022–2023</span><span class="view-more">View editions →</span></div>
+        </div>
+        </a>
+      </article>
+    </div>
+
+    <p class="subhead">Architecture</p>
+    <div class="grid">
       <article class="card">
         <div class="thumb mosaic">
           <img src="img/ancb-02.jpg" alt="Panel discussion at the Aedes Architecture Forum">
           <img src="img/ancb-01.jpg" alt="Kengo Kuma speaking at ANCB">
           <img src="img/ancb-04.jpg" alt="Erieta Attali speaking at ANCB">
           <img src="img/ancb-03.jpg" alt="Speaker at the Aedes Architecture Forum">
-          <div class="overlay">
-            <span class="role">Streaming operator</span>
-            <p>Livestream and AV documentation of talks at the Aedes Architecture Forum, in collaboration with Reframe Videos.</p>
-            <div class="foot"><span>Berlin</span><a href="https://vimeo.com/showcase/11625144?video=1201439832" target="_blank" rel="noopener">Vimeo →</a></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Streaming operator</span></div>
         </div>
-        <h3 class="caption">ANCB / Aedes</h3>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="https://img.youtube.com/vi/IAjejfOVgfI/hqdefault.jpg" alt="A MAZE Festival award show livestream" loading="lazy">
-          <div class="overlay">
-            <span class="role">Stage coordination · livestream</span>
-            <p>Coordination of two conference stages and livestream of the festival's award show.</p>
-            <div class="foot"><span>Berlin · 2026</span><a href="https://www.youtube.com/watch?v=IAjejfOVgfI" target="_blank" rel="noopener">watch →</a></div>
-          </div>
+        <div class="body">
+          <h3>ANCB / Aedes</h3>
+          <p>Livestream and AV documentation of talks at the Aedes Architecture Forum, in collaboration with Reframe Videos.</p>
+          <div class="foot"><span>Berlin</span><a href="https://vimeo.com/showcase/11625144?video=1201439832" target="_blank" rel="noopener">Vimeo →</a></div>
         </div>
-        <h3 class="caption">A MAZE</h3>
-      </article>
-      <article class="card">
-        <div class="thumb mosaic">
-          <img src="img/we4-01.jpg" alt="WE.4 runway — Berlin Fashion Week">
-          <img src="img/we4-02.jpg" alt="WE.4 runway — Berlin Fashion Week">
-          <img src="img/we4-03.jpg" alt="WE.4 show at the venue — Berlin Fashion Week">
-          <img src="img/we4-04.jpg" alt="WE.4 runway — Berlin Fashion Week">
-          <div class="overlay">
-            <span class="role">Live editor · streaming</span>
-            <p>AV documentation and livestream of Berlin Fashion Week across two editions — the inaugural Autumn-Winter at the BOLLE Festsäle in Moabit and Spring-Summer at Verti Music Hall — four runways each. In collaboration with Reframe Videos.</p>
-            <div class="foot"><span>Berlin · 2022–2023</span><span class="links"><a href="https://www.youtube.com/watch?v=iqxwrtHG94E" target="_blank" rel="noopener">01</a> <a href="https://www.youtube.com/watch?v=jQV8DY7WP_A" target="_blank" rel="noopener">02</a> <a href="https://www.youtube.com/watch?v=YrWBfe5WkJE" target="_blank" rel="noopener">03</a> <a href="https://www.youtube.com/watch?v=uNEWtMwUjsc" target="_blank" rel="noopener">04 →</a></span></div>
-          </div>
-        </div>
-        <h3 class="caption">WE.4 — Berlin Fashion Week</h3>
       </article>
       <article class="card">
         <div class="thumb"><img src="img/wia-01.jpg" alt="WIA Berlin livestream — speaker overlay on the Haus der Statistik">
-          <div class="overlay">
-            <span class="role">Live editor</span>
-            <p>Women in Architecture — a month-long festival of exhibitions and talks across the city. Livestreamed all the talks at the feldfünf space in Kreuzberg, alongside a DoP and a sound engineer.</p>
-            <div class="foot"><span>Berlin · 2021</span><span class="links"><a href="https://www.youtube.com/watch?v=5mjVTNMgm9s" target="_blank" rel="noopener">01</a> <a href="https://www.youtube.com/watch?v=8zvc609r4HM" target="_blank" rel="noopener">02</a> <a href="https://www.youtube.com/watch?v=xW5hTYtYAII" target="_blank" rel="noopener">03 →</a></span></div>
-          </div>
+          <div class="role-overlay"><span class="role">Live editor</span></div>
         </div>
-        <h3 class="caption">WIA Berlin</h3>
+        <div class="body">
+          <h3>WIA Berlin</h3>
+          <p>Women in Architecture — a month-long festival of exhibitions and talks across the city. Livestreamed all the talks at the feldfünf space in Kreuzberg, alongside a DoP and a sound engineer.</p>
+          <div class="foot"><span>Berlin · 2021</span><span class="links"><a href="https://www.youtube.com/watch?v=5mjVTNMgm9s" target="_blank" rel="noopener">01</a> <a href="https://www.youtube.com/watch?v=8zvc609r4HM" target="_blank" rel="noopener">02</a> <a href="https://www.youtube.com/watch?v=xW5hTYtYAII" target="_blank" rel="noopener">03 →</a></span></div>
+        </div>
       </article>
     </div>
   </section>
@@ -501,13 +480,14 @@
           <img src="img/el-air.jpg" alt="Aire — the air element editorial">
           <img src="img/el-earth.jpg" alt="Earth element editorial">
           <img src="img/el-fire.jpg" alt="Fire element editorial">
-          <div class="overlay">
-            <span class="role">Production design</span>
-            <p>A four-part fashion photography editorial — Wasser, Aire, Earth, Fire — a team-developed reverence to the four elements and their power. Each chapter became a magazine cover.</p>
-            <div class="foot"><span>Berlin · 2020–2022</span><span class="view-more">View series →</span></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Production design</span></div>
         </div>
-        <h3 class="caption">Elements</h3>
+        <div class="body">
+          <h3>Elements</h3>
+          <p>A four-part fashion editorial devoted to the elements — each chapter became a magazine cover.</p>
+          <div class="foot"><span>Berlin · 2020–2022</span><span class="view-more">View series →</span></div>
+        </div>
         </a>
       </article>
       <article class="card">
@@ -516,13 +496,14 @@
           <img src="img/free-02.jpg" alt="Berlin Freiheit editorial — S-Bahn bridge">
           <img src="img/free-03.jpg" alt="Berlin Freiheit editorial — avant-garde styling">
           <img src="img/free-04.jpg" alt="Berlin Freiheit editorial — local independent brands">
-          <div class="overlay">
-            <span class="role">Assistant production · stylist</span>
-            <p>An homage to the city and its avant-garde aesthetics. Every piece in the shoot is by a local independent brand — the photos given back to the designers for free use, in support of the creative industry.</p>
-            <div class="foot"><span>Berlin · 2022</span></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Assistant production · stylist</span></div>
         </div>
-        <h3 class="caption">Berlin Freiheit</h3>
+        <div class="body">
+          <h3>Berlin Freiheit</h3>
+          <p>An homage to the city and its avant-garde aesthetics. Every piece in the shoot is by a local independent brand — the photos given back to the designers for free use, in support of the creative industry.</p>
+          <div class="foot"><span>Berlin · 2022</span></div>
+        </div>
       </article>
     </div>
 
@@ -534,13 +515,14 @@
           <img src="img/fin-02.jpg" alt="El fin de los tiempos — painted set with lights">
           <img src="img/fin-03.jpg" alt="El fin de los tiempos — alphabet room">
           <img src="img/fin-04.jpg" alt="El fin de los tiempos — UV-lit room">
-          <div class="overlay">
-            <span class="role">Production design</span>
-            <p>A clandestine open party in unique locations — graffiti, visuals and light installations staged to stimulate the senses. Across its editions it drew audiences into surreal, immersive scenes paired with curated music and live shows.</p>
-            <div class="foot"><span>Bogotá · 2016–2017</span></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Production design</span></div>
         </div>
-        <h3 class="caption">El fin de los tiempos</h3>
+        <div class="body">
+          <h3>El fin de los tiempos</h3>
+          <p>A clandestine open party in unique locations — graffiti, visuals and light installations staged to stimulate the senses. Across its editions it drew audiences into surreal, immersive scenes paired with curated music and live shows.</p>
+          <div class="foot"><span>Bogotá · 2016–2017</span></div>
+        </div>
       </article>
       <article class="card">
         <div class="thumb mosaic">
@@ -548,13 +530,14 @@
           <img src="img/sil-02.jpg" alt="El Silencio — still">
           <img src="img/sil-03.jpg" alt="El Silencio — still">
           <img src="img/sil-04.jpg" alt="El Silencio — still">
-          <div class="overlay">
-            <span class="role">Production design · dir. Isabel Torres</span>
-            <p>Independent Colombian short. Like the others in this set, its story sheds light on the political, social and religious undercurrents of Colombian culture — intricate plots that gave the art department room to enrich each character. Co-designed with Daniela Ortiz.</p>
-            <div class="foot"><span>Bogotá · 2017</span></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Production design · dir. Isabel Torres</span></div>
         </div>
-        <h3 class="caption">El Silencio</h3>
+        <div class="body">
+          <h3>El Silencio</h3>
+          <p>Independent Colombian short. Like the others in this set, its story sheds light on the political, social and religious undercurrents of Colombian culture — intricate plots that gave the art department room to enrich each character. Co-designed with Daniela Ortiz.</p>
+          <div class="foot"><span>Bogotá · 2017</span></div>
+        </div>
       </article>
       <article class="card">
         <div class="thumb mosaic">
@@ -562,13 +545,14 @@
           <img src="img/nom-02.jpg" alt="No Matarás — still">
           <img src="img/nom-03.jpg" alt="No Matarás — still">
           <img src="img/nom-04.jpg" alt="No Matarás — still">
-          <div class="overlay">
-            <span class="role">Production design · dir. Juan Lorza</span>
-            <p>Independent short shot in La Cocha. Small-budget, but a team fully devoted to telling stories full of the stark realities often overlooked by the public eye. Co-designed with Daniela Ortiz.</p>
-            <div class="foot"><span>La Cocha, Colombia · 2016</span></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Production design · dir. Juan Lorza</span></div>
         </div>
-        <h3 class="caption">No Matarás</h3>
+        <div class="body">
+          <h3>No Matarás</h3>
+          <p>Independent short shot in La Cocha. Small-budget, but a team fully devoted to telling stories full of the stark realities often overlooked by the public eye. Co-designed with Daniela Ortiz.</p>
+          <div class="foot"><span>La Cocha, Colombia · 2016</span></div>
+        </div>
       </article>
       <article class="card">
         <div class="thumb mosaic">
@@ -576,41 +560,14 @@
           <img src="img/plan-02.jpg" alt="Plantario — still">
           <img src="img/plan-03.jpg" alt="Plantario — still">
           <img src="img/plan-04.jpg" alt="Plantario — still">
-          <div class="overlay">
-            <span class="role">Production design · Idartes</span>
-            <p>Independent short film series produced for Idartes. Art direction co-designed with Daniela Ortiz.</p>
-            <div class="foot"><span>Bogotá · 2017</span></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Production design · Idartes</span></div>
         </div>
-        <h3 class="caption">Plantario</h3>
-      </article>
-    </div>
-
-    <p class="subhead">Politan</p>
-    <div class="grid">
-      <article class="card">
-        <div class="thumb"><img src="img/pol-rel-03.jpg" alt="Politan — band portrait at the release, crocodile mural">
-          <div class="overlay">
-            <span class="role">Creative producer · Kickstarter</span>
-            <p>A band-project with a social purpose, focused on music production and education, digging into the streets of Bogotá. As creative producer in the early days with the duo Kaput: visual concept, a crowdfunding video, concert outfits, and the release concert itself.</p>
-            <div class="foot"><span>Bogotá · 2017</span></div>
-          </div>
+        <div class="body">
+          <h3>Plantario</h3>
+          <p>Independent short film series produced for Idartes. Art direction co-designed with Daniela Ortiz.</p>
+          <div class="foot"><span>Bogotá · 2017</span></div>
         </div>
-        <h3 class="caption">Politan — Concept &amp; Release</h3>
-      </article>
-      <article class="card">
-        <div class="thumb mosaic">
-          <img src="img/pol-prop-01.jpg" alt="Politan light-box prop lit up on stage">
-          <img src="img/pol-prop-02.jpg" alt="POLITAN neon logo prop, live set">
-          <img src="img/pol-prop-04.jpg" alt="Politan live set with the logo prop">
-          <img src="img/pol-prop-03.jpg" alt="Politan performing with the light-box prop">
-          <div class="overlay">
-            <span class="role">Production design · fabrication</span>
-            <p>A laser-cut lamp shaped like the band's logo, designed and built as a concert prop for both live sets and the album-release konzert with the full band and guests.</p>
-            <div class="foot"><span>Bogotá · 2017</span></div>
-          </div>
-        </div>
-        <h3 class="caption">Politan — Live-Set Prop</h3>
       </article>
     </div>
   </section>
@@ -619,9 +576,10 @@
   <section class="block reveal" id="film">
     <div class="head">
       <span class="idx">03</span>
-      <h2>Film</h2>
+      <h2>Band &amp; Music Projects</h2>
     </div>
 
+    <p class="subhead">Politan</p>
     <div class="grid">
       <article class="card">
         <a class="card-link" href="dream-baby-dream.html">
@@ -630,34 +588,60 @@
           <img src="img/dbd-05.jpg" alt="Dream Baby Dream — cast on white pedestals inside a grand hall">
           <img src="img/dbd-01.jpg" alt="Dream Baby Dream — figure on an empty airfield">
           <img src="img/dbd-02.jpg" alt="Dream Baby Dream — performers on a sunlit floor of scattered photographs">
-          <div class="overlay">
-            <span class="role">Behind the scenes · data manager</span>
-            <p>A 20-minute collaborative experimental film in which 60 Berlin community members — children, teenagers and adults, professional and amateur artists — use music, movement and poetry to explore home and belonging, dream and utopia, and experiences of trauma. Winner of the COUNTERPOINT Award at the 2026 Liminal Dance Film Festival (Washington DC).</p>
-            <div class="foot"><span>Berlin · 2026</span><span class="view-more">View series →</span></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Behind the scenes · data manager</span></div>
         </div>
-        <h3 class="caption">Dream Baby Dream</h3>
+        <div class="body">
+          <h3>Dream Baby Dream</h3>
+          <p>60 Berlin community members explore home, belonging and trauma through music, movement and poetry. Winner, COUNTERPOINT Award, 2026 Liminal Dance Film Festival.</p>
+          <div class="foot"><span>Berlin · 2026</span><span class="view-more">View series →</span></div>
+        </div>
         </a>
       </article>
       <article class="card">
         <div class="thumb"><img src="img/ohnmacht.jpg" alt="Ohnmacht — film poster, dir. Kris Limbach">
-          <div class="overlay">
-            <span class="role">Title graphics · production assistant · dir. Kris Limbach</span>
-            <p>Kris Limbach's experimental feature. In 2016, at the dawn of influencer culture, a young woman survives through social-media stunts and gig work while secretly joining a feminist resistance cell — until performance becomes rebellion and survival turns ritual.</p>
-            <div class="foot"><span>Berlin</span><a href="https://vimeo.com/1157247158" target="_blank" rel="noopener">Teaser →</a></div>
-          </div>
+          <div class="role-overlay"><span class="role">Title graphics · production assistant · dir. Kris Limbach</span></div>
         </div>
-        <h3 class="caption">Ohnmacht</h3>
+        <div class="body">
+          <h3>Ohnmacht</h3>
+          <p>Kris Limbach's experimental feature. In 2016, at the dawn of influencer culture, a young woman survives through social-media stunts and gig work while secretly joining a feminist resistance cell — until performance becomes rebellion and survival turns ritual.</p>
+          <div class="foot"><span>Berlin</span><a href="https://vimeo.com/1157247158" target="_blank" rel="noopener">Teaser →</a></div>
+        </div>
       </article>
       <article class="card">
         <div class="thumb">image
-          <div class="overlay">
-            <span class="role">Collective film · 4 cameras</span>
-            <p>A collectively made film, shot on four cameras. <span class="tag-wip">in progress</span></p>
-            <div class="foot"><span>—</span></div>
-          </div>
+          <div class="role-overlay"><span class="role">Collective film · 4 cameras</span></div>
         </div>
-        <h3 class="caption">Plushy</h3>
+        <div class="body">
+          <h3>Plushy</h3>
+          <p>A collectively made film, shot on four cameras. <span class="tag-wip">in progress</span></p>
+          <div class="foot"><span>—</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="img/pol-rel-03.jpg" alt="Politan — band portrait at the release, crocodile mural">
+          <div class="role-overlay"><span class="role">Production design · Kickstarter</span></div>
+        </div>
+        <div class="body">
+          <h3>Politan — Concept &amp; Release</h3>
+          <p>A band-project with a social purpose, focused on music production and education, digging into the streets of Bogotá. In the early days with the duo Kaput: visual concept, a crowdfunding video, concert outfits, and the release concert itself.</p>
+          <div class="foot"><span>Bogotá · 2017</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb mosaic">
+          <img src="img/pol-prop-01.jpg" alt="Politan light-box prop lit up on stage">
+          <img src="img/pol-prop-02.jpg" alt="POLITAN neon logo prop, live set">
+          <img src="img/pol-prop-04.jpg" alt="Politan live set with the logo prop">
+          <img src="img/pol-prop-03.jpg" alt="Politan performing with the light-box prop">
+        
+          <div class="role-overlay"><span class="role">Production design · fabrication</span></div>
+        </div>
+        <div class="body">
+          <h3>Politan — Live-Set Prop</h3>
+          <p>A laser-cut lamp shaped like the band's logo, designed and built as a concert prop for both live sets and the album-release konzert with the full band and guests.</p>
+          <div class="foot"><span>Bogotá · 2017</span></div>
+        </div>
       </article>
     </div>
 
@@ -665,13 +649,13 @@
     <div class="grid">
       <article class="card">
         <div class="thumb"><img src="https://img.youtube.com/vi/BLCf5wFp1Q4/hqdefault.jpg" alt="Pictoplasma — behind-the-scenes video" loading="lazy">
-          <div class="overlay">
-            <span class="role">Camera · editing</span>
-            <p>Behind-the-scenes video for the festival.</p>
-            <div class="foot"><span>Berlin</span><a href="https://www.youtube.com/watch?v=BLCf5wFp1Q4" target="_blank" rel="noopener">watch →</a></div>
-          </div>
+          <div class="role-overlay"><span class="role">Camera · editing</span></div>
         </div>
-        <h3 class="caption">Pictoplasma</h3>
+        <div class="body">
+          <h3>Pictoplasma</h3>
+          <p>Behind-the-scenes video for the festival.</p>
+          <div class="foot"><span>Berlin</span><a href="https://www.youtube.com/watch?v=BLCf5wFp1Q4" target="_blank" rel="noopener">watch →</a></div>
+        </div>
       </article>
       <article class="card">
         <div class="thumb mosaic">
@@ -679,13 +663,14 @@
           <img src="img/mr-04.jpg" alt="Four Voices — glass and wood sound instrument">
           <img src="img/mr-03.jpg" alt="Martin Riches adjusting small kinetic sound sculptures">
           <img src="img/mr-02.jpg" alt="A Martin Riches sound machine, close detail">
-          <div class="overlay">
-            <span class="role">Recording production</span>
-            <p>Studio documentation of seven works by the sound artist — known for his music machines, sound installations and acoustic speech synthesizers. Published on YouTube.</p>
-            <div class="foot"><span>Berlin</span><a href="https://www.youtube.com/@martin_riches_artist" target="_blank" rel="noopener">YouTube →</a></div>
-          </div>
+        
+          <div class="role-overlay"><span class="role">Recording production</span></div>
         </div>
-        <h3 class="caption">Martin Riches</h3>
+        <div class="body">
+          <h3>Martin Riches</h3>
+          <p>Studio documentation of seven works by the sound artist — known for his music machines, sound installations and acoustic speech synthesizers. Published on YouTube.</p>
+          <div class="foot"><span>Berlin</span><a href="https://www.youtube.com/@martin_riches_artist" target="_blank" rel="noopener">YouTube →</a></div>
+        </div>
       </article>
     </div>
   </section>
