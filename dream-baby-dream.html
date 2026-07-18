@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Baby Dream — Mariana Hoyos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #333b45;
+    --bg-deep: #2b323b;
+    --panel: #3a434e;
+    --lime: #b5e550;
+    --lime-dim: #9fc93f;
+    --ink: #e8ebe6;
+    --ink-soft: #b4bcc2;
+    --ink-faint: #7f888f;
+    --line: #59636e;
+    --display: 'Jost', sans-serif;
+    --serif: 'Spectral', Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(43,50,59,0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem clamp(1.2rem, 4vw, 3rem);
+  }
+  nav .brand {
+    font-family: var(--display);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    color: var(--lime);
+    text-decoration: none;
+  }
+  nav .back {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav .back:hover { color: var(--lime); }
+
+  .spine {
+    position: fixed;
+    left: clamp(18px, 3.5vw, 46px);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(var(--lime), var(--lime-dim) 60%, transparent);
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  @media (max-width: 760px) { .spine { display: none; } }
+
+  main { position: relative; }
+
+  section {
+    padding: clamp(3.5rem, 8vw, 7rem) clamp(1.4rem, 6vw, 5rem);
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* ---- detail hero ---- */
+  .detail-hero {
+    padding-top: clamp(2.5rem, 6vw, 4.5rem);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+  }
+  .hero-flex {
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(2rem, 5vw, 4rem);
+    flex-wrap: wrap;
+  }
+  .hero-flex .text { flex: 1 1 420px; min-width: 280px; }
+  .hero-flex .poster-wrap {
+    flex: 0 0 auto;
+    width: clamp(180px, 22vw, 260px);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px -12px rgba(0,0,0,0.5);
+  }
+  .hero-flex .poster-wrap img { display: block; width: 100%; height: auto; }
+  @media (max-width: 640px) {
+    .hero-flex { flex-direction: column-reverse; align-items: flex-start; }
+    .hero-flex .poster-wrap { width: 45vw; max-width: 220px; }
+  }
+  .detail-hero .eyebrow {
+    font-family: var(--display);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: var(--lime);
+    margin-bottom: 1.1rem;
+  }
+  .detail-hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(2.4rem, 7vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    max-width: 16ch;
+  }
+  .detail-hero .lede {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(1.02rem, 1.9vw, 1.24rem);
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin-top: 1.6rem;
+  }
+  .detail-hero .meta {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    font-family: var(--display);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--lime-dim);
+    color: var(--lime);
+    padding: 0.35rem 0.7rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ---- gallery ---- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 0.9rem;
+  }
+  .gallery figure {
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    border-radius: 2px;
+  }
+  .gallery img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .gallery figure:hover img { transform: scale(1.03); }
+
+  .subhead {
+    font-family: var(--display);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.74rem;
+    color: var(--lime-dim);
+    margin: 0 0 1.2rem;
+  }
+
+  /* ---- credits ---- */
+  .credits {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: clamp(1.6rem, 4vw, 2.6rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem 2.4rem;
+  }
+  .credits h4 {
+    font-family: var(--display);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lime-dim);
+    margin-bottom: 0.6rem;
+  }
+  .credits p {
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    background: var(--bg-deep);
+    padding: clamp(3rem, 7vw, 5.5rem) clamp(1.4rem, 6vw, 5rem);
+    text-align: center;
+  }
+  footer .big {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(2rem, 7vw, 3.6rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lime);
+  }
+  footer .sub { font-family: var(--serif); font-style: italic; color: var(--ink-soft); margin-top: 0.4rem; font-size: 1.15rem; }
+  footer .contact {
+    margin-top: 2.2rem;
+    display: flex;
+    gap: 1.2rem 2.4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: var(--display);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+  }
+  footer .contact a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 3px; }
+  footer .contact a:hover { color: var(--lime); border-color: var(--lime); }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<div class="spine" aria-hidden="true"></div>
+
+<nav>
+  <a class="brand" href="index.html">Mariana Hoyos</a>
+  <a class="back" href="index.html#film">&larr; Back to work</a>
+</nav>
+
+<main>
+
+  <section class="detail-hero reveal">
+    <div class="hero-flex">
+      <div class="text">
+        <p class="eyebrow">Politan · Behind the Scenes · Data Manager</p>
+        <h1>Dream Baby <span style="color:var(--lime)">Dream</span></h1>
+        <p class="lede">A 20-minute collaborative experimental film in which 60 Berlin community members — children, teenagers and adults, professional and amateur artists — use music, movement and poetry to explore home and belonging, dream and utopia, and experiences of trauma.</p>
+        <div class="meta">
+          <span class="badge">Winner · COUNTERPOINT Award</span>
+          <span>Liminal Dance Film Festival 2026 · Washington DC</span>
+          <span>Berlin · 2026</span>
+        </div>
+      </div>
+      <div class="poster-wrap">
+        <img src="img/dbd-poster.jpg" alt="Dream Baby Dream — official poster, Jazzfest Berlin, Official Selection Liminal Dance Film Festival">
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="subhead">Stills</p>
+    <div class="gallery">
+      <figure><img src="img/dbd-01.jpg" alt="Dream Baby Dream — figure on an empty airfield, arms outstretched"></figure>
+      <figure><img src="img/dbd-02.jpg" alt="Dream Baby Dream — performers moving across a sunlit room, photographs scattered on the floor"></figure>
+      <figure><img src="img/dbd-03.jpg" alt="Dream Baby Dream — close portrait lit by warm curtains"></figure>
+      <figure><img src="img/dbd-04.jpg" alt="Dream Baby Dream — child in soft focus, red hair ribbon"></figure>
+      <figure><img src="img/dbd-05.jpg" alt="Dream Baby Dream — cast standing on white pedestals inside a grand hall"></figure>
+      <figure><img src="img/dbd-06.jpg" alt="Dream Baby Dream — cast in costume with balloons, outdoor field"></figure>
+      <figure><img src="img/dbd-07.jpg" alt="Dream Baby Dream — children in costume inside a dim room"></figure>
+      <figure><img src="img/dbd-08.jpg" alt="Dream Baby Dream — full cast group photo, arms raised, inside the Bauhaus-Archiv atrium"></figure>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="subhead">Credits</p>
+    <div class="credits">
+      <div>
+        <h4>A film by</h4>
+        <p>Andrés Aguiló, Lina Ashour, Frederik Britzlmair, Nadin Deventer, Joel Grip, Andrés Hilarión, Chris Jonas, Nelly Thea Köster, Cal Ola, Ahmed Shah</p>
+      </div>
+      <div>
+        <h4>With cast of</h4>
+        <p>Musicians of Moabit Imaginarium; Performers of Theater X / Platform Migration Matters; Children of Mullewapp e. V. &amp; Miriam-Makeba-Grundschule; SOS-Kinderdorf Berlin: Hort an der Theodor-Heuss-Gemeinschaftsschule; Milton Camilo</p>
+      </div>
+      <div>
+        <h4>Production</h4>
+        <p>A Production of Berliner Festspiele / Jazzfest Berlin. Funded by the Federal Government Commissioner for Culture and the Media. Supported by Berliner Sparkasse.</p>
+      </div>
+      <div>
+        <h4>Recognition</h4>
+        <p>Official Selection, Liminal Dance Film Festival 2026. Winner, COUNTERPOINT Award.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <p class="big">Thank you</p>
+  <p class="sub">for looking at my work</p>
+  <div class="contact">
+    <a href="mailto:marianahoyos@proton.me">marianahoyos@proton.me</a>
+    <a href="tel:+4917656951594">+49 0176 56951594</a>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
