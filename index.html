@@ -134,24 +134,25 @@
     letter-spacing: 0.32em;
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: var(--lime);
+    color: var(--ink);
     margin-bottom: 1.4rem;
   }
   .hero h1 {
     font-family: var(--display);
     font-weight: 300;
-    font-size: clamp(2.8rem, 9vw, 6.4rem);
+    font-size: clamp(2.6rem, 8.2vw, 5.8rem);
     line-height: 0.98;
-    letter-spacing: 0.02em;
-    color: var(--ink);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--lime);
   }
-  .hero h1 .lime { color: var(--lime); }
   .hero .lede {
     font-family: var(--serif);
     font-weight: 300;
     font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+    line-height: 1.5;
     color: var(--ink-soft);
-    max-width: 42ch;
+    max-width: 46ch;
     margin-top: 1.8rem;
   }
   .hero .meta {
@@ -192,12 +193,21 @@
   }
   .subhead {
     font-family: var(--display);
-    font-weight: 400;
-    letter-spacing: 0.2em;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    font-size: 0.74rem;
-    color: var(--lime-dim);
-    margin: 2.4rem 0 1.2rem;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: var(--lime);
+    margin: 3rem 0 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .subhead::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
   }
 
   /* ---- project grid ---- */
@@ -208,14 +218,19 @@
   }
   .card {
     background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 2px;
+    border: 1px solid transparent;
+    border-radius: 18px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: border-color 0.25s, transform 0.25s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   }
-  .card:hover { border-color: var(--lime); transform: translateY(-3px); }
+  .card:hover {
+    border-color: var(--lime);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.5);
+  }
   .card .thumb {
     aspect-ratio: 16 / 10;
     background:
@@ -229,39 +244,47 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     overflow: hidden;
+    border-radius: 18px 18px 0 0;
   }
   .card .thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .card:hover .thumb img { transform: scale(1.04); }
+  .card:hover .thumb img { transform: scale(1.06); }
 
   .thumb.mosaic {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 2px;
+    gap: 3px;
     background: var(--bg-deep);
+    border-radius: 18px 18px 0 0;
   }
   .thumb.mosaic img { width: 100%; height: 100%; object-fit: cover; }
 
-  .card .body { padding: 1.1rem 1.2rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
+  .card .body { padding: 1.3rem 1.4rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
   .card h3 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: 1.22rem;
-    color: var(--lime);
+    font-size: 1.28rem;
+    color: var(--ink);
     line-height: 1.15;
   }
+  .card:hover h3 { color: var(--lime); }
   .card .role {
+    display: inline-flex;
+    align-self: flex-start;
     font-family: var(--display);
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    color: var(--ink-faint);
-    margin: 0.35rem 0 0.7rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+    color: var(--lime-dim);
+    background: rgba(181, 229, 80, 0.1);
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    margin: 0.6rem 0 0.85rem;
     text-transform: uppercase;
   }
   .card p {
@@ -272,6 +295,7 @@
   .card .foot {
     margin-top: auto;
     padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -355,8 +379,8 @@
   <div class="hero-wrap">
   <section class="hero">
     <p class="eyebrow">Creative &amp; Media Producer · Berlin</p>
-    <h1>Mariana <span class="lime">Hoyos</span></h1>
-    <p class="lede">Eight years of work across events and film sets — sometimes as a producer, other times as an art director, occasionally as a streaming operator. An integrated approach that runs from the organizational to the aesthetic side of a project.</p>
+    <h1>Mariana Hoyos</h1>
+    <p class="lede">Colombian-born, Berlin-based creative producer working across filmmaking, set design, live editing and event production — from art direction in Bogotá to streaming T.A.T.V. and producing Dream Baby Dream.</p>
     <div class="meta">
       <span>Concert &amp; Film Production</span>
       <span>Streaming &amp; Live Editing</span>
@@ -537,16 +561,42 @@
         </div>
       </article>
     </div>
+
+    <p class="subhead">Politan</p>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb"><img src="img/pol-rel-03.jpg" alt="Politan — band portrait at the release, crocodile mural"></div>
+        <div class="body">
+          <h3>Politan — Concept &amp; Release</h3>
+          <span class="role">Creative producer · Kickstarter</span>
+          <p>A band-project with a social purpose, focused on music production and education, digging into the streets of Bogotá. As creative producer in the early days with the duo Kaput: visual concept, a crowdfunding video, concert outfits, and the release concert itself.</p>
+          <div class="foot"><span>Bogotá · 2017</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb mosaic">
+          <img src="img/pol-prop-01.jpg" alt="Politan light-box prop lit up on stage">
+          <img src="img/pol-prop-02.jpg" alt="POLITAN neon logo prop, live set">
+          <img src="img/pol-prop-04.jpg" alt="Politan live set with the logo prop">
+          <img src="img/pol-prop-03.jpg" alt="Politan performing with the light-box prop">
+        </div>
+        <div class="body">
+          <h3>Politan — Live-Set Prop</h3>
+          <span class="role">Production design · fabrication</span>
+          <p>A laser-cut lamp shaped like the band's logo, designed and built as a concert prop for both live sets and the album-release konzert with the full band and guests.</p>
+          <div class="foot"><span>Bogotá · 2017</span></div>
+        </div>
+      </article>
+    </div>
   </section>
 
   <!-- FILM / VIDEO -->
   <section class="block reveal" id="film">
     <div class="head">
       <span class="idx">03</span>
-      <h2>Band &amp; Music Projects</h2>
+      <h2>Film</h2>
     </div>
 
-    <p class="subhead">Politan</p>
     <div class="grid">
       <article class="card">
         <a class="card-link" href="dream-baby-dream.html">
@@ -580,29 +630,6 @@
           <span class="role">Collective film · 4 cameras</span>
           <p>A collectively made film, shot on four cameras. <span class="tag-wip">in progress</span></p>
           <div class="foot"><span>—</span></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="img/pol-rel-03.jpg" alt="Politan — band portrait at the release, crocodile mural"></div>
-        <div class="body">
-          <h3>Politan — Concept &amp; Release</h3>
-          <span class="role">Production design · Kickstarter</span>
-          <p>A band-project with a social purpose, focused on music production and education, digging into the streets of Bogotá. In the early days with the duo Kaput: visual concept, a crowdfunding video, concert outfits, and the release concert itself.</p>
-          <div class="foot"><span>Bogotá · 2017</span></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb mosaic">
-          <img src="img/pol-prop-01.jpg" alt="Politan light-box prop lit up on stage">
-          <img src="img/pol-prop-02.jpg" alt="POLITAN neon logo prop, live set">
-          <img src="img/pol-prop-04.jpg" alt="Politan live set with the logo prop">
-          <img src="img/pol-prop-03.jpg" alt="Politan performing with the light-box prop">
-        </div>
-        <div class="body">
-          <h3>Politan — Live-Set Prop</h3>
-          <span class="role">Production design · fabrication</span>
-          <p>A laser-cut lamp shaped like the band's logo, designed and built as a concert prop for both live sets and the album-release konzert with the full band and guests.</p>
-          <div class="foot"><span>Bogotá · 2017</span></div>
         </div>
       </article>
     </div>
