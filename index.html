@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mariana Hoyos — Creative Producer, Film & Media</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23b5e550'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='58' font-weight='600' text-anchor='middle' fill='%2314181d'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -60,7 +60,9 @@
     text-transform: uppercase;
     font-size: 0.82rem;
     color: var(--lime);
+    text-decoration: none;
   }
+  nav .brand:hover { color: var(--ink); }
   nav ul {
     list-style: none;
     display: flex;
@@ -148,7 +150,6 @@
     text-transform: uppercase;
     color: var(--ink);
   }
-  .hero h1 .lime { color: var(--lime); }
   .hero .lede {
     font-family: var(--serif);
     font-weight: 300;
@@ -275,7 +276,7 @@
     font-family: var(--serif);
     font-weight: 500;
     font-size: 1.22rem;
-    color: var(--lime);
+    color: var(--ink);
     line-height: 1.15;
     margin-bottom: 0.6rem;
   }
@@ -319,21 +320,11 @@
   footer {
     border-top: 1px solid var(--line);
     background: var(--bg-deep);
-    padding: clamp(3rem, 7vw, 5.5rem) clamp(1.4rem, 6vw, 5rem);
+    padding: clamp(3.5rem, 8vw, 6.5rem) clamp(1.4rem, 6vw, 5rem);
     text-align: center;
   }
-  footer .big {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(2rem, 7vw, 3.6rem);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--lime);
-  }
-  footer .sub { font-family: var(--serif); font-style: italic; color: var(--ink-soft); margin-top: 0.4rem; font-size: 1.15rem; }
   footer .mail {
     display: inline-block;
-    margin-top: 2.4rem;
     font-family: var(--display);
     font-weight: 300;
     font-size: clamp(1.3rem, 4.6vw, 3.2rem);
@@ -378,12 +369,12 @@
   .reveal.in .card:nth-child(6) { transition-delay: 0.35s; }
 </style>
 </head>
-<body>
+<body id="top">
 
 <div class="spine" aria-hidden="true"></div>
 
 <nav>
-  <span class="brand">Mariana Hoyos</span>
+  <a class="brand" href="#top">Mariana Hoyos</a>
   <ul>
     <li><a href="#streaming">Streaming</a></li>
     <li><a href="#design">Production Design</a></li>
@@ -398,7 +389,7 @@
   <div class="hero-wrap">
   <section class="hero">
     <p class="eyebrow">Creative Producer · Film &amp; Media · Berlin</p>
-    <h1>Mariana <span class="lime">Hoyos</span></h1>
+    <h1>Mariana Hoyos</h1>
     <p class="lede">Colombian-born, Berlin-based creative producer working across filmmaking, set design, live editing and event production. She began in Bogotá doing art direction on short films with the collective Arte Kaput, moved into streaming as producer and live editor of the noise festival T.A.T.V., and was media manager on Dream Baby Dream. She works across Spanish, English and German.</p>
     <div class="meta">
       <span>Concert &amp; Film Production</span>
@@ -603,10 +594,10 @@
   <section class="block reveal" id="film">
     <div class="head">
       <span class="idx">03</span>
-      <h2>Band &amp; Music Projects</h2>
+      <h2>Film</h2>
     </div>
 
-    <p class="subhead">Politan</p>
+    <p class="subhead">Band &amp; Music Projects</p>
     <div class="grid">
       <article class="card featured">
         <a class="card-link" href="dream-baby-dream.html">
@@ -705,8 +696,6 @@
 </main>
 
 <footer id="contact">
-  <p class="big">Thank you</p>
-  <p class="sub">for looking at my work</p>
   <a class="mail" href="mailto:marianahoyos@proton.me">marianahoyos@proton.me</a>
   <a class="phone" href="tel:+4917656951594">+49 0176 56951594</a>
 </footer>
