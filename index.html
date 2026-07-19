@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mariana Hoyos — Creative Producer, Film & Media</title>
+<meta name="description" content="Mariana Hoyos is a Colombian-born, Berlin-based creative producer working across live editing, camera, film and event production.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marianahoyos.com/">
+<meta property="og:title" content="Mariana Hoyos — Creative Producer, Film & Media">
+<meta property="og:description" content="Colombian-born, Berlin-based creative producer working across live editing, camera, film and event production.">
+<meta property="og:image" content="https://marianahoyos.com/img/og-preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mariana Hoyos — Creative Producer, Film & Media">
+<meta name="twitter:description" content="Colombian-born, Berlin-based creative producer working across live editing, camera, film and event production.">
+<meta name="twitter:image" content="https://marianahoyos.com/img/og-preview.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -386,6 +396,44 @@
   .reveal.in .card:nth-child(4) { transition-delay: 0.21s; }
   .reveal.in .card:nth-child(5) { transition-delay: 0.28s; }
   .reveal.in .card:nth-child(6) { transition-delay: 0.35s; }
+  .about {
+    border-top: 1px solid var(--line);
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.4rem, 6vw, 5rem);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.8rem, 4vw, 3.5rem);
+    align-items: center;
+  }
+  @media (min-width: 820px) {
+    .about-inner { grid-template-columns: 0.85fr 1.15fr; }
+  }
+  .about-photo {
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--bg-deep);
+  }
+  .about-photo img { width: 100%; display: block; }
+  .about-label {
+    font-family: var(--display);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.74rem;
+    color: var(--lime);
+    margin-bottom: 1.2rem;
+  }
+  .about-text p:not(.about-label) {
+    font-weight: 300;
+    color: var(--ink-soft);
+    font-size: clamp(1rem, 1.6vw, 1.12rem);
+    margin-bottom: 1.1rem;
+    max-width: 60ch;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
 </style>
 </head>
 <body id="top">
@@ -398,7 +446,7 @@
     <li><a href="#streaming">Streaming</a></li>
     <li><a href="#design">Production Design</a></li>
     <li><a href="#film">Film</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
   </ul>
 </nav>
 
@@ -482,7 +530,7 @@
         <div class="body">
           <h3>ANCB / Aedes</h3>
           <p>Livestream and AV documentation of talks at the Aedes Architecture Forum, in collaboration with Reframe Videos.</p>
-          <div class="foot"><span>Berlin</span><a href="https://vimeo.com/showcase/11625144?video=1201439832" target="_blank" rel="noopener">Vimeo →</a></div>
+          <div class="foot"><span>Berlin · 2022–ongoing</span><a href="https://vimeo.com/showcase/11625144?video=1201439832" target="_blank" rel="noopener">Vimeo →</a></div>
         </div>
       </article>
       <article class="card">
@@ -556,12 +604,12 @@
           <img src="img/ir-01.jpg" alt="Inner Rave editorial — model among branches">
           <img src="img/ir-08.jpg" alt="Inner Rave editorial — group among rubble">
         
-          <div class="role-overlay"><span class="role"><span class="cat">Fashion editorial</span>Assistant production</span></div>
+          <div class="role-overlay"><span class="role"><span class="cat">Fashion editorial</span>Assistant production &amp; camera</span></div>
         </div>
         <div class="body">
           <h3>Inner Rave</h3>
           <p>A fashion editorial shot across the ruins and graffiti of an abandoned Berlin building — bomber jackets, chunky boots and rave-wear in the city's raw underground architecture.</p>
-          <div class="foot"><span>Berlin</span><span class="view-more">View series →</span></div>
+          <div class="foot"><span>Berlin · 2023</span><span class="view-more">View series →</span></div>
         </div>
         </a>
       </article>
@@ -689,7 +737,7 @@
         <div class="body">
           <h3>Berlin Gabbers</h3>
           <p>Fashion film shot in the same abandoned Berlin building as the Inner Rave editorial, published by KALTBLUT. <a href="inner-rave.html" style="color:var(--lime-dim);text-decoration:none;">See the photos →</a></p>
-          <div class="foot"><span>Berlin</span><a href="https://www.youtube.com/watch?v=1IAGvVcFxdY&list=PLU_MdbHRAhiADD_fKdvCnJnYsPdVZpvHx&index=2" target="_blank" rel="noopener">watch →</a></div>
+          <div class="foot"><span>Berlin · 2023</span><a href="https://www.youtube.com/watch?v=1IAGvVcFxdY&list=PLU_MdbHRAhiADD_fKdvCnJnYsPdVZpvHx&index=2" target="_blank" rel="noopener">watch →</a></div>
         </div>
       </article>
       <article class="card">
@@ -700,7 +748,7 @@
         <div class="body">
           <h3>Pictoplasma</h3>
           <p>Behind-the-scenes video for the festival of contemporary character design.</p>
-          <div class="foot"><span>Berlin</span><span class="view-more">View project →</span></div>
+          <div class="foot"><span>Berlin · 2025</span><span class="view-more">View project →</span></div>
         </div>
         </a>
       </article>
@@ -717,7 +765,7 @@
         <div class="body">
           <h3>Martin Riches</h3>
           <p>Studio documentation of works by the sound artist — known for his music machines, sound installations and acoustic speech synthesizers.</p>
-          <div class="foot"><span>Berlin</span><span class="view-more">View project →</span></div>
+          <div class="foot"><span>Berlin · 2025</span><span class="view-more">View project →</span></div>
         </div>
         </a>
       </article>
@@ -735,6 +783,20 @@
   </section>
 
 </main>
+
+<section id="about" class="about">
+  <div class="about-inner">
+    <div class="about-photo">
+      <img src="img/about-mariana.jpg" alt="Mariana Hoyos at the live-editing desk during a stream">
+    </div>
+    <div class="about-text">
+      <p class="about-label">About</p>
+      <p>Mariana Hoyos is a Colombian-born, Berlin-based creative producer working across live editing, camera, film and event production.</p>
+      <p>Her practice has shifted over the years: rooted early on in art direction and production design for independent film and installations, it now centres on camera work and — above all — live streaming and real-time editing of concerts, performances and festivals. Whether behind a switcher during a live broadcast or shaping a scene on set, she brings the same instinct: turning raw spaces, teams and ideas into something that holds together and moves people.</p>
+      <p>She works across Spanish, English and German — mirroring the transnational landscape of the productions she moves through.</p>
+    </div>
+  </div>
+</section>
 
 <footer id="contact">
   <a class="mail" href="mailto:marianahoyos@proton.me">marianahoyos@proton.me</a>
