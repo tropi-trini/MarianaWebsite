@@ -255,6 +255,8 @@
 
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.in { opacity: 1; transform: none; }
+  .contact .dbd-mail { background:none; border:none; cursor:pointer; font:inherit; color:inherit; text-decoration:underline; padding:0; }
+  .contact .dbd-mail.copied { color: var(--lime); }
 </style>
 </head>
 <body>
@@ -328,8 +330,7 @@
   <p class="big">Thank you</p>
   <p class="sub">for looking at my work</p>
   <div class="contact">
-    <a href="mailto:marianahoyos@proton.me">marianahoyos@proton.me</a>
-    <a href="tel:+4917656951594">+49 0176 56951594</a>
+    <button class="dbd-mail" type="button" data-copy="marianahoyos@proton.me">marianahoyos@proton.me</button>
   </div>
 </footer>
 
@@ -341,5 +342,6 @@
 </script>
 
   <script src="lightbox.js"></script>
+  <script src="copy-mail.js"></script>
 </body>
 </html>

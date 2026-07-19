@@ -14,7 +14,9 @@
 <meta name="twitter:title" content="Mariana Hoyos — Creative Producer, Film & Media">
 <meta name="twitter:description" content="Colombian-born, Berlin-based creative producer working across live editing, camera, film and event production.">
 <meta name="twitter:image" content="https://marianahoyos.com/img/og-preview.jpg">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -358,22 +360,21 @@
     letter-spacing: 0.03em;
     color: var(--ink);
     text-decoration: none;
+    border: none;
     border-bottom: 2px solid var(--line);
     padding-bottom: 0.2em;
+    background: none;
+    cursor: pointer;
     transition: color 0.25s, border-color 0.25s;
     word-break: break-all;
   }
   footer .mail:hover { color: var(--lime); border-color: var(--lime); }
-  footer .phone {
-    display: block;
-    margin-top: 1.6rem;
-    font-family: var(--display);
-    font-size: 0.88rem;
-    letter-spacing: 0.08em;
-    color: var(--ink-faint);
-    text-decoration: none;
+  footer .mail.copied { color: var(--lime); border-color: var(--lime); }
+  footer .copy-hint {
+    display: block; margin-top: 1.2rem;
+    font-family: var(--display); font-size: 0.78rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-faint);
   }
-  footer .phone:hover { color: var(--lime); }
 
   .card .foot .links { display: flex; gap: 0.55rem; }
   .card .foot.foot-left { justify-content: flex-start; gap: 0.8rem; }
@@ -443,9 +444,10 @@
 <nav>
   <a class="brand" href="#top">Mariana Hoyos</a>
   <ul>
-    <li><a href="#streaming">Streaming</a></li>
-    <li><a href="#design">Production Design</a></li>
+    <li><a href="#creative">Creative Producer</a></li>
+    <li><a href="#streaming">Live &amp; Streaming</a></li>
     <li><a href="#film">Film</a></li>
+    <li><a href="#fashion">Fashion</a></li>
     <li><a href="#about">About</a></li>
   </ul>
 </nav>
@@ -459,18 +461,18 @@
     <h1>Mariana Hoyos</h1>
     <p class="lede">Colombian-born, Berlin-based creative producer working across filmmaking, set design, live editing and event production.</p>
     <div class="meta">
-      <span>Concert &amp; Film Production</span>
-      <span>Streaming &amp; Live Editing</span>
-      <span>Production Design</span>
+      <span>Creative Production</span>
+      <span>Live Editing &amp; Streaming</span>
+      <span>Camera &amp; Film</span>
     </div>
   </section>
   </div>
 
-  <!-- STREAMING -->
-  <section class="block reveal" id="streaming">
+    <!-- CREATIVE PRODUCER -->
+  <section class="block reveal" id="creative">
     <div class="head">
       <span class="idx">01</span>
-      <h2>Streaming &amp; Live Editing</h2>
+      <h2>Creative Producer</h2>
     </div>
 
     <div class="grid">
@@ -490,16 +492,17 @@
         </div>
         </a>
       </article>
-      <article class="card snug">
-        <div class="thumb"><img src="img/amaze-01.jpg" alt="A MAZE Festival livestream — Mariana's editing setup with multiview and switcher, full room" loading="lazy">
-          <div class="role-overlay"><span class="role"><span class="cat">Streaming</span>Stage coordination · livestream</span></div>
-        </div>
-        <div class="body">
-          <h3>A MAZE</h3>
-          <p>A MAZE is a Berlin festival for games and playful media. Mariana coordinated its two conference stages and ran the livestream of the festival's award show, keeping the talks and the ceremony flowing across both spaces.</p>
-          <div class="foot foot-left"><span>Berlin · 2026</span><a href="https://www.youtube.com/watch?v=IAjejfOVgfI" target="_blank" rel="noopener">watch →</a></div>
-        </div>
-      </article>
+    </div>
+  </section>
+
+  <!-- LIVE EDITING & STREAMING -->
+  <section class="block reveal" id="streaming">
+    <div class="head">
+      <span class="idx">02</span>
+      <h2>Live Editing &amp; Streaming</h2>
+    </div>
+
+    <div class="grid">
       <article class="card featured">
         <a class="card-link" href="we4.html">
         <div class="thumb mosaic">
@@ -517,8 +520,20 @@
         </div>
         </a>
       </article>
-    
+      <article class="card snug">
+        <a class="card-link" href="amaze.html">
+        <div class="thumb"><img src="img/amaze-01.jpg" alt="A MAZE Festival livestream — Mariana's editing setup with multiview and switcher, full room" loading="lazy">
+          <div class="role-overlay"><span class="role"><span class="cat">Streaming</span>Stage coordination · livestream</span></div>
+        </div>
+        <div class="body">
+          <h3>A MAZE</h3>
+          <p>A MAZE is a Berlin festival for games and playful media. Mariana coordinated its two conference stages and ran the livestream of the festival's award show, keeping the talks and the ceremony flowing across both spaces.</p>
+          <div class="foot"><span>Berlin · 2026</span><span class="view-more">View project →</span></div>
+        </div>
+        </a>
+      </article>
       <article class="card">
+        <a class="card-link" href="ancb.html">
         <div class="thumb mosaic">
           <img src="img/ancb-02.jpg" alt="Panel discussion at the Aedes Architecture Forum">
           <img src="img/ancb-01.jpg" alt="Kengo Kuma speaking at ANCB">
@@ -530,8 +545,9 @@
         <div class="body">
           <h3>ANCB / Aedes</h3>
           <p>Livestream and AV documentation of talks at the Aedes Architecture Forum, in collaboration with Reframe Videos.</p>
-          <div class="foot"><span>Berlin · 2022–ongoing</span><a href="https://vimeo.com/showcase/11625144?video=1201439832" target="_blank" rel="noopener">Vimeo →</a></div>
+          <div class="foot"><span>Berlin · 2022–ongoing</span><span class="view-more">View project →</span></div>
         </div>
+        </a>
       </article>
       <article class="card">
         <a class="card-link" href="wia.html">
@@ -545,7 +561,7 @@
         </div>
         <div class="body">
           <h3>WIA Berlin</h3>
-          <p>Women in Architecture — a month-long festival of exhibitions and talks across the city. Produced and live-edited the streamed talks at the feldfünf space in Kreuzberg, alongside a DoP and a sound engineer.</p>
+          <p>Women in Architecture — a month-long festival of exhibitions and talks across the city. Produced and live-edited the streamed talks at the feldfünf space in Kreuzberg.</p>
           <div class="foot"><span>Berlin · 2021</span><span class="view-more">View talks →</span></div>
         </div>
         </a>
@@ -553,85 +569,55 @@
     </div>
   </section>
 
-  <!-- PRODUCTION DESIGN -->
-  <section class="block reveal" id="design">
+  <!-- FILM -->
+  <section class="block reveal" id="film">
     <div class="head">
-      <span class="idx">02</span>
-      <h2>Production Design</h2>
+      <span class="idx">03</span>
+      <h2>Film</h2>
     </div>
 
     <div class="grid">
       <article class="card">
-        <a class="card-link" href="elements.html">
-        <div class="thumb mosaic">
-          <img src="img/el-water.jpg" alt="Wasser — the water element editorial">
-          <img src="img/el-air.jpg" alt="Aire — the air element editorial">
-          <img src="img/el-earth.jpg" alt="Earth element editorial">
-          <img src="img/el-fire.jpg" alt="Fire element editorial">
-        
-          <div class="role-overlay"><span class="role"><span class="cat">Fashion photography</span>Production design</span></div>
+        <a class="card-link" href="ohnmacht.html">
+        <div class="thumb"><img src="img/ohn-still-01.jpg" alt="Ohnmacht — still from Kris Limbach's film">
+          <div class="role-overlay"><span class="role"><span class="cat">Film</span>Title graphics · production assistant · dir. Kris Limbach</span></div>
         </div>
         <div class="body">
-          <h3>Elements</h3>
-          <p>A four-part fashion editorial devoted to the elements — each chapter became a magazine cover.</p>
-          <div class="foot"><span>Berlin · 2020–2022</span><span class="view-more">View series →</span></div>
+          <h3>Ohnmacht</h3>
+          <p>Kris Limbach's experimental feature. In 2016, at the dawn of influencer culture, a young woman survives through social-media stunts and gig work while secretly joining a feminist resistance cell — until performance becomes rebellion and survival turns ritual.</p>
+          <div class="foot"><span>Berlin · 2019–2024</span><span class="view-more">View stills →</span></div>
+        </div>
+        </a>
+      </article>
+      <article class="card featured">
+        <a class="card-link" href="dream-baby-dream.html">
+        <div class="thumb mosaic">
+          <img src="img/dbd-06.jpg" alt="Dream Baby Dream — cast in costume with balloons, outdoor field">
+          <img src="img/dbd-05.jpg" alt="Dream Baby Dream — cast on white pedestals inside a grand hall">
+          <img src="img/dbd-01.jpg" alt="Dream Baby Dream — figure on an empty airfield">
+          <img src="img/dbd-02.jpg" alt="Dream Baby Dream — performers on a sunlit floor of scattered photographs">
+        
+          <div class="role-overlay"><span class="role"><span class="cat">Collaborative film</span>Behind the scenes · data manager</span></div>
+        </div>
+        <div class="body">
+          <h3>Dream Baby Dream</h3>
+          <p>60 Berlin community members explore home, belonging and trauma through music, movement and poetry. Winner, COUNTERPOINT Award, 2026 Liminal Dance Film Festival.</p>
+          <div class="foot"><span>Berlin · 2026</span><span class="view-more">View series →</span></div>
         </div>
         </a>
       </article>
       <article class="card">
-        <a class="card-link" href="berlin-freiheit.html">
-        <div class="thumb mosaic">
-          <img src="img/free-01.jpg" alt="Berlin Freiheit editorial — graffiti doorway">
-          <img src="img/free-02.jpg" alt="Berlin Freiheit editorial — S-Bahn bridge" style="object-position: 50% 14%;">
-          <img src="img/free-03.jpg" alt="Berlin Freiheit editorial — avant-garde styling" style="object-position: 50% 16%;">
-          <img src="img/free-04.jpg" alt="Berlin Freiheit editorial — local independent brands" style="object-position: 50% 6%;">
-        
-          <div class="role-overlay"><span class="role"><span class="cat">Fashion photography</span>Assistant production · stylist</span></div>
+        <a class="card-link" href="politan.html">
+        <div class="thumb"><img src="img/politan-kickstarter-01.jpg" alt="Politan — still from the Kickstarter shoot">
+          <div class="role-overlay"><span class="role"><span class="cat">Film music</span>Production design · concept &amp; release</span></div>
         </div>
         <div class="body">
-          <h3>Berlin Freiheit</h3>
-          <p>An homage to the city and its avant-garde aesthetics. Every piece in the shoot is by a local independent brand — the photos given back to the designers for free use, in support of the creative industry.</p>
-          <div class="foot"><span>Berlin · 2022</span><span class="view-more">View series →</span></div>
+          <h3>Politan</h3>
+          <p>A band-project with a social purpose, digging into the streets of Bogotá — visual concept, crowdfunding video, a laser-cut logo lamp built as a stage prop, and the release concert itself.</p>
+          <div class="foot"><span>Bogotá · 2017</span><span class="view-more">View project →</span></div>
         </div>
         </a>
       </article>
-
-      <article class="card">
-        <a class="card-link" href="inner-rave.html">
-        <div class="thumb mosaic">
-          <img src="img/ir-03.jpg" alt="Inner Rave editorial — model with a long braid" style="object-position: 50% 20%;">
-          <img src="img/ir-04.jpg" alt="Inner Rave editorial — graffiti window">
-          <img src="img/ir-01.jpg" alt="Inner Rave editorial — model among branches">
-          <img src="img/ir-08.jpg" alt="Inner Rave editorial — group among rubble">
-        
-          <div class="role-overlay"><span class="role"><span class="cat">Fashion editorial</span>Assistant production &amp; camera</span></div>
-        </div>
-        <div class="body">
-          <h3>Inner Rave</h3>
-          <p>A fashion editorial shot across the ruins and graffiti of an abandoned Berlin building — bomber jackets, chunky boots and rave-wear in the city's raw underground architecture.</p>
-          <div class="foot"><span>Berlin · 2023</span><span class="view-more">View series →</span></div>
-        </div>
-        </a>
-      </article>
-    
-      <article class="card">
-        <a class="card-link" href="fin-de-los-tiempos.html">
-        <div class="thumb mosaic">
-          <img src="img/fin-01.jpg" alt="El fin de los tiempos — light installation">
-          <img src="img/fin-02.jpg" alt="El fin de los tiempos — painted set with lights">
-          <img src="img/fin-03.jpg" alt="El fin de los tiempos — alphabet room">
-          <img src="img/fin-04.jpg" alt="El fin de los tiempos — UV-lit room">
-        
-          <div class="role-overlay"><span class="role"><span class="cat">Events</span>Production design</span></div>
-        </div>
-        <div class="body">
-          <h3>El fin de los tiempos</h3>
-          <p>A clandestine open party in unique locations — graffiti, visuals and light installations staged to stimulate the senses. Across its editions it drew audiences into surreal, immersive scenes paired with curated music and live shows.</p>
-          <div class="foot"><span>Bogotá · 2016–2017</span><span class="view-more">View series →</span></div>
-        </div>
-        </a>
-      </article>
-    
       <article class="card">
         <div class="thumb mosaic">
           <img src="img/sil-01.jpg" alt="El Silencio — still">
@@ -677,69 +663,6 @@
           <div class="foot"><span>Bogotá · 2017</span></div>
         </div>
       </article>
-    </div>
-  </section>
-
-  <!-- FILM / VIDEO -->
-  <section class="block reveal" id="film">
-    <div class="head">
-      <span class="idx">03</span>
-      <h2>Film</h2>
-    </div>
-
-    <div class="grid">
-      <article class="card featured">
-        <a class="card-link" href="dream-baby-dream.html">
-        <div class="thumb mosaic">
-          <img src="img/dbd-06.jpg" alt="Dream Baby Dream — cast in costume with balloons, outdoor field">
-          <img src="img/dbd-05.jpg" alt="Dream Baby Dream — cast on white pedestals inside a grand hall">
-          <img src="img/dbd-01.jpg" alt="Dream Baby Dream — figure on an empty airfield">
-          <img src="img/dbd-02.jpg" alt="Dream Baby Dream — performers on a sunlit floor of scattered photographs">
-        
-          <div class="role-overlay"><span class="role"><span class="cat">Collaborative film</span>Behind the scenes · data manager</span></div>
-        </div>
-        <div class="body">
-          <h3>Dream Baby Dream</h3>
-          <p>60 Berlin community members explore home, belonging and trauma through music, movement and poetry. Winner, COUNTERPOINT Award, 2026 Liminal Dance Film Festival.</p>
-          <div class="foot"><span>Berlin · 2026</span><span class="view-more">View series →</span></div>
-        </div>
-        </a>
-      </article>
-      <article class="card">
-        <a class="card-link" href="ohnmacht.html">
-        <div class="thumb"><img src="img/ohn-still-01.jpg" alt="Ohnmacht — still from Kris Limbach's film">
-          <div class="role-overlay"><span class="role"><span class="cat">Film</span>Title graphics · production assistant · dir. Kris Limbach</span></div>
-        </div>
-        <div class="body">
-          <h3>Ohnmacht</h3>
-          <p>Kris Limbach's experimental feature. In 2016, at the dawn of influencer culture, a young woman survives through social-media stunts and gig work while secretly joining a feminist resistance cell — until performance becomes rebellion and survival turns ritual.</p>
-          <div class="foot"><span>Berlin · 2019–2024</span><span class="view-more">View stills →</span></div>
-        </div>
-        </a>
-      </article>
-      <article class="card">
-        <a class="card-link" href="politan.html">
-        <div class="thumb"><img src="img/politan-kickstarter-01.jpg" alt="Politan — still from the Kickstarter shoot">
-          <div class="role-overlay"><span class="role"><span class="cat">Film music</span>Production design · concept &amp; release</span></div>
-        </div>
-        <div class="body">
-          <h3>Politan</h3>
-          <p>A band-project with a social purpose, digging into the streets of Bogotá — visual concept, crowdfunding video, a laser-cut logo lamp built as a stage prop, and the release concert itself.</p>
-          <div class="foot"><span>Bogotá · 2017</span><span class="view-more">View project →</span></div>
-        </div>
-        </a>
-      </article>
-    
-      <article class="card">
-        <div class="thumb"><img src="img/ir-09.jpg" alt="Berlin Gabbers — fashion film still" loading="lazy">
-          <div class="role-overlay"><span class="role"><span class="cat">Fashion film</span>Camera</span></div>
-        </div>
-        <div class="body">
-          <h3>Berlin Gabbers</h3>
-          <p>Fashion film shot in the same abandoned Berlin building as the Inner Rave editorial, published by KALTBLUT. <a href="inner-rave.html" style="color:var(--lime-dim);text-decoration:none;">See the photos →</a></p>
-          <div class="foot"><span>Berlin · 2023</span><a href="https://www.youtube.com/watch?v=1IAGvVcFxdY&list=PLU_MdbHRAhiADD_fKdvCnJnYsPdVZpvHx&index=2" target="_blank" rel="noopener">watch →</a></div>
-        </div>
-      </article>
       <article class="card">
         <a class="card-link" href="pictoplasma.html">
         <div class="thumb"><img src="https://img.youtube.com/vi/BLCf5wFp1Q4/hqdefault.jpg" alt="Pictoplasma — behind-the-scenes video" loading="lazy">
@@ -782,6 +705,108 @@
     </div>
   </section>
 
+  <!-- EVENTS -->
+  <section class="block reveal" id="events">
+    <div class="head">
+      <span class="idx">04</span>
+      <h2>Events</h2>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <a class="card-link" href="fin-de-los-tiempos.html">
+        <div class="thumb mosaic">
+          <img src="img/fin-01.jpg" alt="El fin de los tiempos — light installation">
+          <img src="img/fin-02.jpg" alt="El fin de los tiempos — painted set with lights">
+          <img src="img/fin-03.jpg" alt="El fin de los tiempos — alphabet room">
+          <img src="img/fin-04.jpg" alt="El fin de los tiempos — UV-lit room">
+        
+          <div class="role-overlay"><span class="role"><span class="cat">Events</span>Production design</span></div>
+        </div>
+        <div class="body">
+          <h3>El fin de los tiempos</h3>
+          <p>A clandestine open party in unique locations — graffiti, visuals and light installations staged to stimulate the senses. Across its editions it drew audiences into surreal, immersive scenes paired with curated music and live shows.</p>
+          <div class="foot"><span>Bogotá · 2016–2017</span><span class="view-more">View series →</span></div>
+        </div>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- FASHION -->
+  <section class="block reveal" id="fashion">
+    <div class="head">
+      <span class="idx">05</span>
+      <h2>Fashion</h2>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <a class="card-link" href="elements.html">
+        <div class="thumb mosaic">
+          <img src="img/el-water.jpg" alt="Wasser — the water element editorial">
+          <img src="img/el-air.jpg" alt="Aire — the air element editorial">
+          <img src="img/el-earth.jpg" alt="Earth element editorial">
+          <img src="img/el-fire.jpg" alt="Fire element editorial">
+        
+          <div class="role-overlay"><span class="role"><span class="cat">Fashion photography</span>Production design</span></div>
+        </div>
+        <div class="body">
+          <h3>Elements</h3>
+          <p>A four-part fashion editorial devoted to the elements — each chapter became a magazine cover.</p>
+          <div class="foot"><span>Berlin · 2020–2022</span><span class="view-more">View series →</span></div>
+        </div>
+        </a>
+      </article>
+      <article class="card">
+        <a class="card-link" href="berlin-freiheit.html">
+        <div class="thumb mosaic">
+          <img src="img/free-01.jpg" alt="Berlin Freiheit editorial — graffiti doorway">
+          <img src="img/free-02.jpg" alt="Berlin Freiheit editorial — S-Bahn bridge" style="object-position: 50% 14%;">
+          <img src="img/free-03.jpg" alt="Berlin Freiheit editorial — avant-garde styling" style="object-position: 50% 16%;">
+          <img src="img/free-04.jpg" alt="Berlin Freiheit editorial — local independent brands" style="object-position: 50% 6%;">
+        
+          <div class="role-overlay"><span class="role"><span class="cat">Fashion photography</span>Assistant production · stylist</span></div>
+        </div>
+        <div class="body">
+          <h3>Berlin Freiheit</h3>
+          <p>An homage to the city and its avant-garde aesthetics. Every piece in the shoot is by a local independent brand — the photos given back to the designers for free use, in support of the creative industry.</p>
+          <div class="foot"><span>Berlin · 2022</span><span class="view-more">View series →</span></div>
+        </div>
+        </a>
+      </article>
+      <article class="card">
+        <a class="card-link" href="inner-rave.html">
+        <div class="thumb mosaic">
+          <img src="img/ir-03.jpg" alt="Inner Rave editorial — model with a long braid" style="object-position: 50% 20%;">
+          <img src="img/ir-04.jpg" alt="Inner Rave editorial — graffiti window">
+          <img src="img/ir-01.jpg" alt="Inner Rave editorial — model among branches">
+          <img src="img/ir-08.jpg" alt="Inner Rave editorial — group among rubble">
+        
+          <div class="role-overlay"><span class="role"><span class="cat">Fashion editorial</span>Assistant production &amp; camera</span></div>
+        </div>
+        <div class="body">
+          <h3>Inner Rave</h3>
+          <p>A fashion editorial shot across the ruins and graffiti of an abandoned Berlin building — bomber jackets, chunky boots and rave-wear in the city's raw underground architecture.</p>
+          <div class="foot"><span>Berlin · 2023</span><span class="view-more">View series →</span></div>
+        </div>
+        </a>
+      </article>
+      <article class="card">
+        <a class="card-link" href="berlin-gabbers.html">
+        <div class="thumb"><img src="img/ir-09.jpg" alt="Berlin Gabbers — fashion film still" loading="lazy">
+          <div class="role-overlay"><span class="role"><span class="cat">Fashion film</span>Videography</span></div>
+        </div>
+        <div class="body">
+          <h3>Berlin Gabbers</h3>
+          <p>A fashion film channelling the gabber revival in Berlin's young underground, shot in the same abandoned building as the Inner Rave editorial. A KALTBLUT exclusive.</p>
+          <div class="foot"><span>Berlin · 2023</span><span class="view-more">View project →</span></div>
+        </div>
+        </a>
+      </article>
+    </div>
+  </section>
+
 </main>
 
 <section id="about" class="about">
@@ -799,8 +824,8 @@
 </section>
 
 <footer id="contact">
-  <a class="mail" href="mailto:marianahoyos@proton.me">marianahoyos@proton.me</a>
-  <a class="phone" href="tel:+4917656951594">+49 0176 56951594</a>
+  <button class="mail" type="button" data-copy="marianahoyos@proton.me">marianahoyos@proton.me</button>
+  <span class="copy-hint">Click to copy</span>
 </footer>
 
 <script>
@@ -810,5 +835,6 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+  <script src="copy-mail.js"></script>
 </body>
 </html>
