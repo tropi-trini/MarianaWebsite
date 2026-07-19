@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #333b45;
-    --bg-deep: #2b323b;
-    --panel: #3a434e;
+    --bg: #14181d;
+    --bg-deep: #0e1114;
+    --panel: #1b2026;
     --lime: #b5e550;
     --lime-dim: #9fc93f;
-    --ink: #e8ebe6;
-    --ink-soft: #b4bcc2;
-    --ink-faint: #7f888f;
-    --line: #59636e;
+    --ink: #eef1eb;
+    --ink-soft: #aeb6bd;
+    --ink-faint: #6f7981;
+    --line: #2b323a;
     --display: 'Jost', sans-serif;
     --serif: 'Spectral', Georgia, serif;
   }
@@ -40,7 +40,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(43,50,59,0.82);
+    background: rgba(14,17,20,0.78);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
     display: flex;
@@ -165,22 +165,22 @@
 
   /* ---- gallery ---- */
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 0.9rem;
+    columns: 2;
+    column-gap: 0.9rem;
   }
+  @media (max-width: 640px) { .gallery { columns: 1; } }
   .gallery figure {
     background: var(--bg-deep);
     border: 1px solid var(--line);
     overflow: hidden;
     border-radius: 2px;
+    break-inside: avoid;
+    margin-bottom: 0.9rem;
   }
   .gallery img {
     display: block;
     width: 100%;
-    height: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
+    height: auto;
     transition: transform 0.4s ease;
   }
   .gallery figure:hover img { transform: scale(1.03); }
@@ -334,5 +334,6 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+  <script src="lightbox.js"></script>
 </body>
 </html>
