@@ -83,6 +83,11 @@
     margin-bottom: 0.4rem; color: var(--ink);
   }
   .chapter p.body-text { font-weight: 300; color: var(--ink-soft); margin: 0.6rem 0 1.6rem; max-width: 66ch; }
+  .videos { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  @media (min-width: 720px) { .videos { grid-template-columns: 1fr 1fr; } }
+  .vid { position: relative; width: 100%; aspect-ratio: 16/9; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; background: var(--bg-deep); }
+  .vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .vid-label { font-family: var(--display); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-faint); margin-top: 0.5rem; }
 
   .grid2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
   @media (min-width: 720px) { .grid2 { grid-template-columns: 1fr 1fr; } }
@@ -161,6 +166,21 @@
       <figure><img src="img/fdt-crowd-yellow.jpg" alt="Dancer smiling against a black wall with yellow painted motifs"></figure>
       <figure><img src="img/fdt-crowd-green.jpg" alt="People dancing in front of green striped projections"></figure>
       <figure><img src="img/fdt-djs.jpg" alt="Two DJs at the decks in a red-lit booth with painted backdrop"></figure>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <p class="section-label">Other editions</p>
+    <p class="body-text">The party ran in several editions, each taking over a different space with its own concept — among them "Entre Nalgas" and a hip-hop night. A couple of them were captured on film.</p>
+    <div class="videos">
+      <div>
+        <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/C_AUNUA3R5Y" title="El fin de los tiempos — Entre Nalgas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="vid-label">Entre Nalgas</p>
+      </div>
+      <div>
+        <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/KNznzAQkC9k" title="El fin de los tiempos — hip-hop edition" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="vid-label">Hip-hop edition</p>
+      </div>
     </div>
   </div>
 

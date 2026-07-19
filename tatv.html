@@ -116,6 +116,11 @@
     border: 1px solid var(--line); border-radius: 2px; overflow: hidden; background: var(--bg-deep); aspect-ratio: 16/10;
   }
   .grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* video embeds */
+  .videos { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  @media (min-width: 720px) { .videos { grid-template-columns: 1fr 1fr; } }
+  .vid { position: relative; width: 100%; aspect-ratio: 16/9; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; background: var(--bg-deep); }
+  .vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
   footer {
     border-top: 1px solid var(--line); text-align: center;
@@ -164,6 +169,14 @@
       <figure><img src="img/tatv-03.jpg" alt="Performance reading streamed on T.A.T.V."></figure>
       <figure><img src="img/tatv-01.jpg" alt="T.A.T.V. — detail"></figure>
     </div>
+  </div>
+
+  <p class="section-label" style="margin-top:clamp(2.6rem, 6vw, 4rem);">Watch</p>
+  <div class="videos">
+    <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/kiZfB1Res9Q" title="T.A.T.V. — stream" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/1Jhm2xQb5vg" title="T.A.T.V. — stream" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/6DOWBDVAssc" title="T.A.T.V. — stream" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/vRCzR1FtekQ" title="T.A.T.V. — stream" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div>
 
   <p class="section-label" style="margin-top:clamp(2.6rem, 6vw, 4rem);">Editions</p>

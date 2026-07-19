@@ -102,6 +102,17 @@
   .runways a:hover { color: var(--lime); }
   .runways .tbd { color: var(--ink-faint); font-style: italic; }
 
+  /* video embeds */
+  .videos {
+    display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1rem;
+  }
+  @media (min-width: 720px) { .videos { grid-template-columns: 1fr 1fr; } }
+  .videos .vid {
+    position: relative; width: 100%; aspect-ratio: 16/9;
+    border: 1px solid var(--line); border-radius: 2px; overflow: hidden; background: var(--bg-deep);
+  }
+  .videos .vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
   .grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
   }
@@ -155,27 +166,26 @@
       <p class="when">2022 · BOLLE Festsäle, Moabit, Berlin</p>
       <p>The inaugural edition — four designers presented back to back, all four runways filmed live and streamed.</p>
     </div>
-    <div class="runways">
-      <a href="https://www.youtube.com/watch?v=iqxwrtHG94E" target="_blank" rel="noopener">Runway 01 ↗</a>
-      <a href="https://www.youtube.com/watch?v=jQV8DY7WP_A" target="_blank" rel="noopener">Runway 02 ↗</a>
-      <a href="https://www.youtube.com/watch?v=YrWBfe5WkJE" target="_blank" rel="noopener">Runway 03 ↗</a>
-      <a href="https://www.youtube.com/watch?v=uNEWtMwUjsc" target="_blank" rel="noopener">Runway 04 ↗</a>
+    <div class="videos">
+      <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/nYkI-HksWso" title="WE.4 BOLLE — runway 01" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/4q2QWzg2xak" title="WE.4 BOLLE — runway 02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/XRQ0SU4gC0s" title="WE.4 BOLLE — runway 03" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/uNEWtMwUjsc" title="WE.4 BOLLE — runway 04" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     </div>
   </div>
 
   <div class="edition">
     <div class="info">
-      <h3>Spring/Summer — second edition</h3>
-      <p class="when">2023 · Berlin</p>
+      <h3>Spring/Summer — Verti Music Hall</h3>
+      <p class="when">2023 · Verti Music Hall, Berlin</p>
       <p>The second full edition, once again four designers and four runway shows, filmed live and streamed.</p>
     </div>
-    <div class="runways">
-      <span class="tbd">Runway 01 — link coming soon</span>
-      <span class="tbd">Runway 02 — link coming soon</span>
-      <span class="tbd">Runway 03 — link coming soon</span>
-      <span class="tbd">Runway 04 — link coming soon</span>
+    <div class="videos">
+      <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/iqxwrtHG94E" title="WE.4 Verti — runway 01" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/QGxUiLS8wak" title="WE.4 Verti — runway 02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/jQV8DY7WP_A" title="WE.4 Verti — runway 03" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/YrWBfe5WkJE" title="WE.4 Verti — runway 04" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     </div>
-    <p class="note">Venue to confirm — Uber Eats Music Hall or Verti Music Hall.</p>
   </div>
 
   <div class="stills">
