@@ -226,6 +226,7 @@
   .card .thumb {
     aspect-ratio: 16 / 10;
     border-radius: 5px;
+    position: relative;
     background:
       repeating-linear-gradient(45deg, #1d232a 0 10px, #191f25 10px 20px);
     display: flex;
@@ -238,6 +239,7 @@
     text-transform: uppercase;
     overflow: hidden;
   }
+  .thumb-placeholder { position: absolute; inset: 0; width: 100%; height: 100%; background: #000; }
   .card .thumb img {
     width: 100%;
     height: 100%;
@@ -668,16 +670,6 @@
         </a>
       </article>
       <article class="card">
-        <div class="thumb">image
-          <div class="role-overlay"><span class="role"><span class="cat">Film</span>Collective film · 4 cameras</span></div>
-        </div>
-        <div class="body">
-          <h3>Plushy</h3>
-          <p>A collectively made film, shot on four cameras. <span class="tag-wip">in progress</span></p>
-          <div class="foot"><span>Berlin · 2022–ongoing</span></div>
-        </div>
-      </article>
-      <article class="card">
         <a class="card-link" href="politan.html">
         <div class="thumb"><img src="img/politan-kickstarter-01.jpg" alt="Politan — still from the Kickstarter shoot">
           <div class="role-overlay"><span class="role"><span class="cat">Film music</span>Production design · concept &amp; release</span></div>
@@ -691,12 +683,12 @@
       </article>
     
       <article class="card">
-        <div class="thumb"><img src="https://img.youtube.com/vi/1IAGvVcFxdY/hqdefault.jpg" alt="Inner Rave — fashion film, published by KALTBLUT" loading="lazy">
+        <div class="thumb"><img src="img/ir-09.jpg" alt="Berlin Gabbers — fashion film still" loading="lazy">
           <div class="role-overlay"><span class="role"><span class="cat">Fashion film</span>Camera</span></div>
         </div>
         <div class="body">
-          <h3>Inner Rave — Film</h3>
-          <p>Fashion film shot in the same abandoned Berlin building as the editorial, published by KALTBLUT. <a href="inner-rave.html" style="color:var(--lime-dim);text-decoration:none;">See the photos →</a></p>
+          <h3>Berlin Gabbers</h3>
+          <p>Fashion film shot in the same abandoned Berlin building as the Inner Rave editorial, published by KALTBLUT. <a href="inner-rave.html" style="color:var(--lime-dim);text-decoration:none;">See the photos →</a></p>
           <div class="foot"><span>Berlin</span><a href="https://www.youtube.com/watch?v=1IAGvVcFxdY&list=PLU_MdbHRAhiADD_fKdvCnJnYsPdVZpvHx&index=2" target="_blank" rel="noopener">watch →</a></div>
         </div>
       </article>
@@ -728,6 +720,16 @@
           <div class="foot"><span>Berlin</span><span class="view-more">View project →</span></div>
         </div>
         </a>
+      </article>
+      <article class="card">
+        <div class="thumb"><div class="thumb-placeholder"></div>
+          <div class="role-overlay"><span class="role"><span class="cat">Film</span>Collective film · 4 cameras</span></div>
+        </div>
+        <div class="body">
+          <h3>Plushy</h3>
+          <p>A collectively made film, shot on four cameras. <span class="tag-wip">in progress</span></p>
+          <div class="foot"><span>Berlin · 2022–ongoing</span></div>
+        </div>
       </article>
     </div>
   </section>
