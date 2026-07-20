@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mariana Hoyos — Creative Producer, Film & Media</title>
+<link rel="canonical" href="https://marianahoyos.com/">
+<meta property="og:url" content="https://marianahoyos.com/">
 <meta name="description" content="Mariana Hoyos is a Colombian-born, Berlin-based creative producer working across live editing, camera, film and event production.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marianahoyos.com/">
@@ -91,8 +93,24 @@
     transition: color 0.2s;
   }
   nav a:hover, nav a:focus { color: var(--lime); }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--ink-soft);
+    font-family: var(--display);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.2rem 0;
+  }
+  .nav-toggle:hover, .nav-toggle:focus { color: var(--lime); }
   @media (max-width: 640px) {
-    nav ul { display: none; }
+    .nav-toggle { display: block; }
+    nav { flex-wrap: wrap; }
+    nav ul { display: none; width: 100%; flex-direction: column; gap: 0.9rem; padding: 1rem 0 0.4rem; }
+    nav.open ul { display: flex; }
   }
 
   /* ---- signal spine (the signature element) ---- */
@@ -274,7 +292,11 @@
     opacity: 0;
     transition: opacity 0.25s ease;
   }
-  .card:hover .role-overlay { opacity: 1; }
+  .card:hover .role-overlay,
+  .card:focus-within .role-overlay { opacity: 1; }
+  @media (hover: none) {
+    .card .role-overlay { opacity: 1; }
+  }
 
   .thumb.mosaic {
     display: grid;
@@ -443,10 +465,12 @@
 
 <nav>
   <a class="brand" href="#top">Mariana Hoyos</a>
-  <ul>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+  <ul id="nav-menu">
     <li><a href="#creative">Creative Producer</a></li>
     <li><a href="#streaming">Live &amp; Streaming</a></li>
     <li><a href="#film">Film</a></li>
+    <li><a href="#events">Events</a></li>
     <li><a href="#fashion">Fashion</a></li>
     <li><a href="#about">About</a></li>
   </ul>
@@ -481,9 +505,9 @@
         <div class="thumb mosaic feature-left">
           <img src="img/tatv-04.jpg" alt="T.A.T.V. live switcher multiview, ON AIR" style="object-position: 50% 45%;">
           <img src="img/tatv-02.jpg" alt="Concert during the T.A.T.V. stream">
-          <img src="img/tatv-03.jpg" alt="Performance reading streamed on T.A.T.V." style="object-position: 50% 30%;">
+          <img src="img/tatv-03.jpg" alt="Performance reading streamed on T.A.T.V." style="object-position: 50% 30%;" loading="lazy" decoding="async">
         
-          <div class="role-overlay"><span class="role"><span class="cat">Festival producer</span>Streaming, live editor &amp; poster design</span></div>
+          <div class="role-overlay"><span class="role"><span class="cat">Festival producer</span>Producer &amp; live editor · poster design</span></div>
         </div>
         <div class="body">
           <h3>T.A.T.V.</h3>
@@ -506,10 +530,10 @@
       <article class="card featured">
         <a class="card-link" href="we4.html">
         <div class="thumb mosaic">
-          <img src="img/we4-01.jpg" alt="WE.4 runway — Berlin Fashion Week">
-          <img src="img/we4-02.jpg" alt="WE.4 runway — Berlin Fashion Week">
-          <img src="img/we4-03.jpg" alt="WE.4 show at the venue — Berlin Fashion Week">
-          <img src="img/we4-04.jpg" alt="WE.4 runway — Berlin Fashion Week">
+          <img src="img/we4-01.jpg" alt="WE.4 runway — Berlin Fashion Week" loading="lazy" decoding="async">
+          <img src="img/we4-02.jpg" alt="WE.4 runway — Berlin Fashion Week" loading="lazy" decoding="async">
+          <img src="img/we4-03.jpg" alt="WE.4 show at the venue — Berlin Fashion Week" loading="lazy" decoding="async">
+          <img src="img/we4-04.jpg" alt="WE.4 runway — Berlin Fashion Week" loading="lazy" decoding="async">
         
           <div class="role-overlay"><span class="role"><span class="cat">Streaming</span>Live editor</span></div>
         </div>
@@ -535,10 +559,10 @@
       <article class="card">
         <a class="card-link" href="ancb.html">
         <div class="thumb mosaic">
-          <img src="img/ancb-02.jpg" alt="Panel discussion at the Aedes Architecture Forum">
-          <img src="img/ancb-01.jpg" alt="Kengo Kuma speaking at ANCB">
-          <img src="img/ancb-04.jpg" alt="Erieta Attali speaking at ANCB">
-          <img src="img/ancb-03.jpg" alt="Speaker at the Aedes Architecture Forum">
+          <img src="img/ancb-02.jpg" alt="Panel discussion at the Aedes Architecture Forum" loading="lazy" decoding="async">
+          <img src="img/ancb-01.jpg" alt="Kengo Kuma speaking at ANCB" loading="lazy" decoding="async">
+          <img src="img/ancb-04.jpg" alt="Erieta Attali speaking at ANCB" loading="lazy" decoding="async">
+          <img src="img/ancb-03.jpg" alt="Speaker at the Aedes Architecture Forum" loading="lazy" decoding="async">
         
           <div class="role-overlay"><span class="role"><span class="cat">Architecture talks</span>Streaming and camera operator</span></div>
         </div>
@@ -552,10 +576,10 @@
       <article class="card">
         <a class="card-link" href="wia.html">
         <div class="thumb mosaic">
-          <img src="img/wia-talk-05.jpg" alt="WIA Berlin — panel of speakers">
-          <img src="img/wia-talk-01.jpg" alt="WIA Berlin — speaker at the talk">
-          <img src="img/wia-talk-04.jpg" alt="WIA Berlin — two speakers on stage">
-          <img src="img/wia-talk-03.jpg" alt="WIA Berlin — Haus der Statistik projected">
+          <img src="img/wia-talk-05.jpg" alt="WIA Berlin — panel of speakers" loading="lazy" decoding="async">
+          <img src="img/wia-talk-01.jpg" alt="WIA Berlin — speaker at the talk" loading="lazy" decoding="async">
+          <img src="img/wia-talk-04.jpg" alt="WIA Berlin — two speakers on stage" loading="lazy" decoding="async">
+          <img src="img/wia-talk-03.jpg" alt="WIA Berlin — Haus der Statistik projected" loading="lazy" decoding="async">
         
           <div class="role-overlay"><span class="role"><span class="cat">Architecture festival</span>Producer &amp; live editor</span></div>
         </div>
@@ -579,7 +603,7 @@
     <div class="grid">
       <article class="card">
         <a class="card-link" href="ohnmacht.html">
-        <div class="thumb"><img src="img/ohn-still-01.jpg" alt="Ohnmacht — still from Kris Limbach's film">
+        <div class="thumb"><img src="img/ohn-still-01.jpg" alt="Ohnmacht — still from Kris Limbach's film" loading="lazy" decoding="async">
           <div class="role-overlay"><span class="role"><span class="cat">Film</span>Title graphics · production assistant · dir. Kris Limbach</span></div>
         </div>
         <div class="body">
@@ -592,10 +616,10 @@
       <article class="card featured">
         <a class="card-link" href="dream-baby-dream.html">
         <div class="thumb mosaic">
-          <img src="img/dbd-06.jpg" alt="Dream Baby Dream — cast in costume with balloons, outdoor field">
-          <img src="img/dbd-05.jpg" alt="Dream Baby Dream — cast on white pedestals inside a grand hall">
-          <img src="img/dbd-01.jpg" alt="Dream Baby Dream — figure on an empty airfield">
-          <img src="img/dbd-02.jpg" alt="Dream Baby Dream — performers on a sunlit floor of scattered photographs">
+          <img src="img/dbd-06.jpg" alt="Dream Baby Dream — cast in costume with balloons, outdoor field" loading="lazy" decoding="async">
+          <img src="img/dbd-05.jpg" alt="Dream Baby Dream — cast on white pedestals inside a grand hall" loading="lazy" decoding="async">
+          <img src="img/dbd-01.jpg" alt="Dream Baby Dream — figure on an empty airfield" loading="lazy" decoding="async">
+          <img src="img/dbd-02.jpg" alt="Dream Baby Dream — performers on a sunlit floor of scattered photographs" loading="lazy" decoding="async">
         
           <div class="role-overlay"><span class="role"><span class="cat">Collaborative film</span>Behind the scenes · data manager</span></div>
         </div>
@@ -608,7 +632,7 @@
       </article>
       <article class="card">
         <a class="card-link" href="politan.html">
-        <div class="thumb"><img src="img/politan-kickstarter-01.jpg" alt="Politan — still from the Kickstarter shoot">
+        <div class="thumb"><img src="img/politan-kickstarter-01.jpg" alt="Politan — still from the Kickstarter shoot" loading="lazy" decoding="async">
           <div class="role-overlay"><span class="role"><span class="cat">Film music</span>Production design · concept &amp; release</span></div>
         </div>
         <div class="body">
@@ -619,49 +643,20 @@
         </a>
       </article>
       <article class="card">
+        <a class="card-link" href="bogota-independent-films.html">
         <div class="thumb mosaic">
-          <img src="img/sil-01.jpg" alt="El Silencio — still">
-          <img src="img/sil-02.jpg" alt="El Silencio — still">
-          <img src="img/sil-03.jpg" alt="El Silencio — still">
-          <img src="img/sil-04.jpg" alt="El Silencio — still">
-        
-          <div class="role-overlay"><span class="role"><span class="cat">Film</span>Production design · dir. Isabel Torres</span></div>
+          <img src="img/sil-01.jpg" alt="El Silencio — still" loading="lazy" decoding="async">
+          <img src="img/nom-01.jpg" alt="No Matarás — still" loading="lazy" decoding="async">
+          <img src="img/plan-01.jpg" alt="Plantario — still" loading="lazy" decoding="async">
+          <img src="img/nom-02.jpg" alt="No Matarás — still" loading="lazy" decoding="async">
+          <div class="role-overlay"><span class="role"><span class="cat">Film</span>Production design · three shorts</span></div>
         </div>
         <div class="body">
-          <h3>El Silencio</h3>
-          <p>Independent Colombian short. Like the others in this set, its story sheds light on the political, social and religious undercurrents of Colombian culture — intricate plots that gave the art department room to enrich each character. Co-designed with Daniela Ortiz.</p>
-          <div class="foot"><span>Bogotá · 2017</span></div>
+          <h3>Bogotá Independent Films</h3>
+          <p>Three independent shorts — El Silencio, No Matarás and Plantario — production design across intricate stories of Colombian culture. Co-designed with Daniela Ortiz.</p>
+          <div class="foot"><span>Bogotá &amp; La Cocha, Colombia · 2016–2017</span><span class="view-more">View project →</span></div>
         </div>
-      </article>
-      <article class="card">
-        <div class="thumb mosaic">
-          <img src="img/nom-01.jpg" alt="No Matarás — still">
-          <img src="img/nom-02.jpg" alt="No Matarás — still">
-          <img src="img/nom-03.jpg" alt="No Matarás — still">
-          <img src="img/nom-04.jpg" alt="No Matarás — still">
-        
-          <div class="role-overlay"><span class="role"><span class="cat">Film</span>Production design · dir. Juan Lorza</span></div>
-        </div>
-        <div class="body">
-          <h3>No Matarás</h3>
-          <p>Independent short shot in La Cocha. Small-budget, but a team fully devoted to telling stories full of the stark realities often overlooked by the public eye. Co-designed with Daniela Ortiz.</p>
-          <div class="foot"><span>La Cocha, Colombia · 2016</span></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb mosaic">
-          <img src="img/plan-01.jpg" alt="Plantario — still">
-          <img src="img/plan-02.jpg" alt="Plantario — still">
-          <img src="img/plan-03.jpg" alt="Plantario — still">
-          <img src="img/plan-04.jpg" alt="Plantario — still">
-        
-          <div class="role-overlay"><span class="role"><span class="cat">Film</span>Production design · Idartes</span></div>
-        </div>
-        <div class="body">
-          <h3>Plantario</h3>
-          <p>Independent short film series produced for Idartes. Art direction co-designed with Daniela Ortiz.</p>
-          <div class="foot"><span>Bogotá · 2017</span></div>
-        </div>
+        </a>
       </article>
       <article class="card">
         <a class="card-link" href="pictoplasma.html">
@@ -678,10 +673,10 @@
       <article class="card">
         <a class="card-link" href="martin-riches.html">
         <div class="thumb mosaic">
-          <img src="img/mr-01.jpg" alt="Martin Riches next to one of his music machines, studio session">
-          <img src="img/mr-04.jpg" alt="Four Voices — glass and wood sound instrument">
-          <img src="img/mr-03.jpg" alt="Martin Riches adjusting small kinetic sound sculptures">
-          <img src="img/mr-02.jpg" alt="A Martin Riches sound machine, close detail">
+          <img src="img/mr-01.jpg" alt="Martin Riches next to one of his music machines, studio session" loading="lazy" decoding="async">
+          <img src="img/mr-04.jpg" alt="Four Voices — glass and wood sound instrument" loading="lazy" decoding="async">
+          <img src="img/mr-03.jpg" alt="Martin Riches adjusting small kinetic sound sculptures" loading="lazy" decoding="async">
+          <img src="img/mr-02.jpg" alt="A Martin Riches sound machine, close detail" loading="lazy" decoding="async">
         
           <div class="role-overlay"><span class="role"><span class="cat">Documentation</span>Assistant director</span></div>
         </div>
@@ -716,10 +711,10 @@
       <article class="card">
         <a class="card-link" href="fin-de-los-tiempos.html">
         <div class="thumb mosaic">
-          <img src="img/fin-01.jpg" alt="El fin de los tiempos — light installation">
-          <img src="img/fin-02.jpg" alt="El fin de los tiempos — painted set with lights">
-          <img src="img/fin-03.jpg" alt="El fin de los tiempos — alphabet room">
-          <img src="img/fin-04.jpg" alt="El fin de los tiempos — UV-lit room">
+          <img src="img/fin-01.jpg" alt="El fin de los tiempos — light installation" loading="lazy" decoding="async">
+          <img src="img/fin-02.jpg" alt="El fin de los tiempos — painted set with lights" loading="lazy" decoding="async">
+          <img src="img/fin-03.jpg" alt="El fin de los tiempos — alphabet room" loading="lazy" decoding="async">
+          <img src="img/fin-04.jpg" alt="El fin de los tiempos — UV-lit room" loading="lazy" decoding="async">
         
           <div class="role-overlay"><span class="role"><span class="cat">Events</span>Production design</span></div>
         </div>
@@ -744,10 +739,10 @@
       <article class="card">
         <a class="card-link" href="elements.html">
         <div class="thumb mosaic">
-          <img src="img/el-water.jpg" alt="Wasser — the water element editorial">
-          <img src="img/el-air.jpg" alt="Aire — the air element editorial">
-          <img src="img/el-earth.jpg" alt="Earth element editorial">
-          <img src="img/el-fire.jpg" alt="Fire element editorial">
+          <img src="img/el-water.jpg" alt="Wasser — the water element editorial" loading="lazy" decoding="async">
+          <img src="img/el-air.jpg" alt="Aire — the air element editorial" loading="lazy" decoding="async">
+          <img src="img/el-earth.jpg" alt="Earth element editorial" loading="lazy" decoding="async">
+          <img src="img/el-fire.jpg" alt="Fire element editorial" loading="lazy" decoding="async">
         
           <div class="role-overlay"><span class="role"><span class="cat">Fashion photography</span>Production design</span></div>
         </div>
@@ -761,12 +756,12 @@
       <article class="card">
         <a class="card-link" href="berlin-freiheit.html">
         <div class="thumb mosaic">
-          <img src="img/free-01.jpg" alt="Berlin Freiheit editorial — graffiti doorway">
-          <img src="img/free-02.jpg" alt="Berlin Freiheit editorial — S-Bahn bridge" style="object-position: 50% 14%;">
-          <img src="img/free-03.jpg" alt="Berlin Freiheit editorial — avant-garde styling" style="object-position: 50% 16%;">
-          <img src="img/free-04.jpg" alt="Berlin Freiheit editorial — local independent brands" style="object-position: 50% 6%;">
+          <img src="img/free-01.jpg" alt="Berlin Freiheit editorial — graffiti doorway" loading="lazy" decoding="async">
+          <img src="img/free-02.jpg" alt="Berlin Freiheit editorial — S-Bahn bridge" style="object-position: 50% 14%;" loading="lazy" decoding="async">
+          <img src="img/free-03.jpg" alt="Berlin Freiheit editorial — avant-garde styling" style="object-position: 50% 16%;" loading="lazy" decoding="async">
+          <img src="img/free-04.jpg" alt="Berlin Freiheit editorial — local independent brands" style="object-position: 50% 6%;" loading="lazy" decoding="async">
         
-          <div class="role-overlay"><span class="role"><span class="cat">Fashion photography</span>Assistant production · stylist</span></div>
+          <div class="role-overlay"><span class="role"><span class="cat">Fashion photography</span>Assistant production</span></div>
         </div>
         <div class="body">
           <h3>Berlin Freiheit</h3>
@@ -778,10 +773,10 @@
       <article class="card">
         <a class="card-link" href="inner-rave.html">
         <div class="thumb mosaic">
-          <img src="img/ir-03.jpg" alt="Inner Rave editorial — model with a long braid" style="object-position: 50% 20%;">
-          <img src="img/ir-04.jpg" alt="Inner Rave editorial — graffiti window">
-          <img src="img/ir-01.jpg" alt="Inner Rave editorial — model among branches">
-          <img src="img/ir-08.jpg" alt="Inner Rave editorial — group among rubble">
+          <img src="img/ir-03.jpg" alt="Inner Rave editorial — model with a long braid" style="object-position: 50% 20%;" loading="lazy" decoding="async">
+          <img src="img/ir-04.jpg" alt="Inner Rave editorial — graffiti window" loading="lazy" decoding="async">
+          <img src="img/ir-01.jpg" alt="Inner Rave editorial — model among branches" loading="lazy" decoding="async">
+          <img src="img/ir-08.jpg" alt="Inner Rave editorial — group among rubble" loading="lazy" decoding="async">
         
           <div class="role-overlay"><span class="role"><span class="cat">Fashion editorial</span>Assistant production &amp; camera</span></div>
         </div>
@@ -812,7 +807,7 @@
 <section id="about" class="about">
   <div class="about-inner">
     <div class="about-photo">
-      <img src="img/about-mariana.jpg" alt="Mariana Hoyos at the live-editing desk during a stream">
+      <img src="img/about-mariana.jpg" alt="Mariana Hoyos at the live-editing desk during a stream" loading="lazy" decoding="async">
     </div>
     <div class="about-text">
       <p class="about-label">About</p>
@@ -833,6 +828,17 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const nav = document.querySelector('nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('ul a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
 </script>
 
   <script src="copy-mail.js"></script>
